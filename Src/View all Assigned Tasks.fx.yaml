@@ -1,0 +1,316 @@
+"'View all Assigned Tasks' As screen":
+    OnVisible: |+
+        =UpdateContext({ varToggle: false });
+        /*Set(
+            varTaskId,
+            LookUp(TeamMembers, 'Manager Name' = varLoggedInUser.Name).TaskID.TID
+        )*/
+        
+        ClearCollect(
+            colEmployeeTasks,
+            Filter(Tasks, ProjectId.ProjectId = Gallery6.Selected.ProjectId)
+        )
+        
+        
+        
+        /*ClearCollect(
+            colEmployeeTasks,
+            AddColumns(
+                Filter(TeamMembers, 'Manager Name' = varLoggedInUser.Name),
+                "ExtractedTID", TaskID.TID,
+                "TaskDescription", LookUp(Tasks, TID = TaskID.TID, Description)
+            )
+        )*/
+        
+        
+        
+
+    Rectangle1_27 As rectangle:
+        Fill: =RGBA(9, 33, 98, 1)
+        Height: =88
+        Width: =640
+        ZIndex: =1
+
+    Label6_12 As label:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =88
+        Size: =23
+        Text: ="Assigned Tasks"
+        Width: =260
+        X: =213
+        ZIndex: =2
+
+    Icon20_10 As icon.ArrowLeft:
+        Color: =RGBA(255, 255, 255, 1)
+        Icon: =Icon.ArrowLeft
+        OnSelect: =Navigate('Manager Dashboard',ScreenTransition.Fade)
+        X: =35
+        Y: =12
+        ZIndex: =3
+
+    Icon21_9 As icon.More:
+        Color: =RGBA(255, 255, 255, 1)
+        Icon: =Icon.More
+        X: =551
+        Y: =12
+        ZIndex: =4
+
+    Icon14_13 As icon.Home:
+        Height: =60
+        Icon: =Icon.Home
+        X: =35
+        Y: =1064
+        ZIndex: =5
+
+    Icon15_13 As icon.Person:
+        Height: =60
+        Icon: =Icon.Person
+        X: =551
+        Y: =1064
+        ZIndex: =6
+
+    Rectangle1_28 As rectangle:
+        Fill: =RGBA(237, 237, 237, 1)
+        Height: =4
+        Width: =640
+        Y: =1048
+        ZIndex: =7
+
+    "Gallery7 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+        DelayItemLoading: =true
+        Height: =829
+        Items: |+
+            =//Filter(Tasks, TID = varTaskId.TaskID.T)
+            colEmployeeTasks
+            
+            
+            
+            
+            
+            
+            
+        Layout: =Layout.Vertical
+        LoadingSpinner: =LoadingSpinner.Data
+        OnSelect: =Navigate('View Task',ScreenTransition.UnCover)
+        TemplateFill: =If(ThisItem.IsSelected,ColorFade(Color.Blue,95%),Color.Transparent)
+        TemplatePadding: =0
+        TemplateSize: =335
+        Width: =605
+        X: =22
+        Y: =196
+        ZIndex: =8
+
+        Image2 As image:
+            Height: =113
+            Image: |
+                =LookUp(TeamMembers,Name=ThisItem.AssignedTo.Name,EmpImg)
+            OnSelect: =Select(Parent)
+            RadiusBottomLeft: =8
+            RadiusBottomRight: =8
+            RadiusTopLeft: =8
+            RadiusTopRight: =8
+            Width: =120
+            X: =468
+            Y: =69
+            ZIndex: =1
+
+        Title6 As label:
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Semibold)
+            Height: =Self.Size * 1.8
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =22
+            Text: |-
+                ="Project Name : " & LookUp(Projects,ProjectId=ThisItem.ProjectId.ProjectId,'Project Name')
+            VerticalAlign: =VerticalAlign.Top
+            Width: =Parent.TemplateWidth - 173
+            X: =24
+            Y: =69
+            ZIndex: =2
+
+        Subtitle6 As label:
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+            Height: =33
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =22
+            Text: |
+                ="Description : " & ThisItem.Description
+            VerticalAlign: =VerticalAlign.Top
+            Width: =399
+            X: =24
+            Y: =124
+            ZIndex: =3
+
+        Separator5 As rectangle:
+            Height: =8
+            OnSelect: =Select(Parent)
+            Width: =Parent.TemplateWidth
+            Y: =Parent.TemplateHeight - Self.Height
+            ZIndex: =5
+
+        Rectangle9 As rectangle:
+            Height: =Parent.TemplateHeight - Separator5.Height
+            OnSelect: =Select(Parent)
+            Visible: =ThisItem.IsSelected
+            Width: =4
+            ZIndex: =6
+
+        Subtitle6_1 As label:
+            Color: =RGBA(184, 0, 0, 1)
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Semibold)
+            Height: =42
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =23
+            Text: |-
+                = "Assigned To : "& ThisItem.AssignedTo.Name
+                //LookUp(Tasks, TID = ThisItem.TaskID.TID,
+                //AssignedTo.Name)
+            VerticalAlign: =VerticalAlign.Top
+            Width: =399
+            X: =24
+            Y: =17
+            ZIndex: =7
+
+        Icon11_2 As icon.CalendarBlank:
+            Color: =RGBA(255, 0, 0, 1)
+            Icon: =Icon.CalendarBlank
+            OnSelect: =Select(Parent)
+            Width: =49
+            X: =24
+            Y: =170
+            ZIndex: =8
+
+        Subtitle6_2 As label:
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+            Height: =39
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =20
+            Text: |+
+                =DateValue(ThisItem.Deadline)
+                //DateValue(LookUp(Tasks, TID = ThisItem.TaskID.TID,Deadline))
+                //CountRows(colEmployeeTasks)
+                
+            VerticalAlign: =VerticalAlign.Top
+            Width: =138
+            X: =101
+            Y: =182
+            ZIndex: =9
+
+        Subtitle6_4 As label:
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+            Height: =36
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =20
+            Text: |-
+                =ThisItem.'Status (cr371_status)'
+                /*LookUp(Tasks, TID= ThisItem.TaskID.TID,
+                'Status (cr371_status)')*/
+            VerticalAlign: =VerticalAlign.Top
+            Width: =207
+            X: =381
+            Y: =252
+            ZIndex: =11
+
+        Icon37 As icon.ToolsWrench:
+            Icon: =Icon.ToolsWrench
+            OnSelect: =Select(Parent)
+            Width: =46
+            X: =311
+            Y: =238
+            ZIndex: =12
+
+        Icon9_6 As icon.Flag:
+            Color: |
+                =If(
+                    ThisItem.Priority = 852020000, RGBA(255, 0, 0, 1),   
+                    ThisItem.Priority = 852020001, RGBA(0, 255, 0, 1),   
+                    ThisItem.Priority = 852020002, RGBA(255, 255, 0, 1),
+                    RGBA(0, 0, 0, 0) 
+                )
+            Icon: =Icon.Flag
+            Width: =49
+            X: =28
+            Y: =246
+            ZIndex: =13
+
+        Label10_6 As label:
+            Height: =60
+            Size: =21
+            Text: =ThisItem.Priority
+            Width: =141
+            X: =108
+            Y: =242
+            ZIndex: =14
+
+    Icon4_6 As icon.Search:
+        Color: =RGBA(9, 33, 98, 1)
+        Icon: =Icon.Search
+        OnSelect: |
+            =UpdateContext({ varToggle: false })
+        X: =22
+        Y: =111
+        ZIndex: =9
+
+    TextInput2_6 As text:
+        BorderColor: =RGBA(202, 202, 202, 1)
+        Default: =
+        Height: =64
+        RadiusBottomLeft: =15
+        RadiusBottomRight: =15
+        RadiusTopLeft: =15
+        RadiusTopRight: =15
+        Size: =21
+        Visible: =!varToggle
+        Width: =423
+        X: =99
+        Y: =111
+        ZIndex: =10
+
+    Icon19_4 As icon.Filter:
+        Icon: =Icon.Filter
+        OnSelect: |
+            =UpdateContext({ varToggle: !varToggle })
+        X: =551
+        Y: =111
+        ZIndex: =11
+
+    ComboBox2_3 As combobox:
+        DisplayFields: =["Value"]
+        Height: =64
+        Items: =Choices('Priority (Tasks)')
+        SearchFields: =["Value"]
+        SearchItems: =Choices('Priority (Tasks)',ComboBox2_3.SearchText)
+        Size: =21
+        Visible: =varToggle
+        Width: =435
+        X: =99
+        Y: =111
+        ZIndex: =12
+
+    Icon40 As icon.Add:
+        Height: =60
+        Icon: =Icon.Add
+        OnSelect: =Navigate('Assign Task to Teammembers',ScreenTransition.UnCover)
+        X: =284
+        Y: =1064
+        ZIndex: =13
+

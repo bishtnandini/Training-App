@@ -1,0 +1,117 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "cr371_teammembers",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "cr371_teammember",
+    "MaxGetRowsCount": 500,
+    "Name": "TeamMembers",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "cr371_AssignedTicket": "Assigned Ticket",
+      "cr371_attendance_EmpID_cr371_teammember": "Attendances",
+      "cr371_comments_AssignedBy_cr371_teammember": "Comments (cr371_comments_AssignedBy_cr371_teammember)",
+      "cr371_comments_AssignedTo_cr371_teammember": "Comments (cr371_comments_AssignedTo_cr371_teammember)",
+      "cr371_department": "Department",
+      "cr371_email": "Email",
+      "cr371_empid": "Name",
+      "cr371_empimg": "EmpImg",
+      "cr371_empimgid": "cr371_EmpImgId",
+      "cr371_feedback_AssignedTo_cr371_teammember": "FeedBacks",
+      "cr371_FeedbackAssignedToID": "Feedback Assigned To ID",
+      "cr371_managername": "Manager Name",
+      "cr371_name": "EmpId",
+      "cr371_password": "Password",
+      "cr371_project1_AssignedManager_cr371_teammember": "Projectsses",
+      "cr371_projectassignmentss_Name_cr371_teammember": "ProjectAssignmentsses",
+      "cr371_ProjectId": "ProjectId",
+      "cr371_role": "Role",
+      "cr371_task_AssignedTo_cr371_teammember": "Tasks",
+      "cr371_TaskID": "TaskID",
+      "cr371_teammember_AsyncOperations": "System Jobs",
+      "cr371_teammember_BulkDeleteFailures": "Bulk Delete Failures",
+      "cr371_teammember_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "cr371_teammember_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "cr371_teammember_ProcessSession": "Process Sessions",
+      "cr371_teammember_SyncErrors": "Sync Errors",
+      "cr371_teammemberid": "TeamMember",
+      "cr371_ticket_AssignTo_cr371_teammember": "Tickets (cr371_ticket_AssignTo_cr371_teammember)",
+      "cr371_ticket_CreatedBy_cr371_teammember": "Tickets (cr371_ticket_CreatedBy_cr371_teammember)",
+      "cr371_TickId": "TickId",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "TeamMembers",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "TeamMembers (Views)",
+    "Name": "_cr371_teammember_views",
+    "RelatedEntityName": "TeamMembers",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "1cb0b2b0-d197-43a2-83d9-a15018fcba0a": "TeamMember Associated View",
+      "1ff06b20-50d7-442e-ad26-ba807a562051": "TeamMember Lookup View",
+      "2d4ca482-8b72-4708-8da0-9a2cc4c02df9": "TeamMember Advanced Find View",
+      "30270e78-5374-4670-a7a4-5e66d51e4786": "Inactive TeamMembers",
+      "9d11f736-4400-40e2-8e54-aa8b990783fd": "Active TeamMembers"
+    }
+  },
+  {
+    "DisplayName": "Status (TeamMembers)",
+    "Name": "cr371_teammember_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "TeamMembers"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "TeamMembers",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (TeamMembers)",
+    "Name": "cr371_teammember_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "TeamMembers"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "TeamMembers",
+    "Type": "OptionSetInfo"
+  }
+]

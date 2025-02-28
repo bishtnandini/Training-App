@@ -1,0 +1,123 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "cr371_feedbacks",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "cr371_feedback",
+    "MaxGetRowsCount": 500,
+    "Name": "FeedBacks",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "cr371_AssignedTo": "AssignedTo",
+      "cr371_dep": "Dep",
+      "cr371_description": "Description",
+      "cr371_fbid": "FBID",
+      "cr371_feedback_AsyncOperations": "System Jobs",
+      "cr371_feedback_BulkDeleteFailures": "Bulk Delete Failures",
+      "cr371_feedback_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "cr371_feedback_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "cr371_feedback_ProcessSession": "Process Sessions",
+      "cr371_feedback_SyncErrors": "Sync Errors",
+      "cr371_feedbackid": "FeedBack",
+      "cr371_issuename": "Issue Name",
+      "cr371_role": "Department",
+      "cr371_teammember_FeedbackAssignedToID_cr371_feedback": "TeamMembers",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "FeedBacks",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "FeedBacks (Views)",
+    "Name": "_cr371_feedback_views",
+    "RelatedEntityName": "FeedBacks",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "17c32ad2-acbd-4af6-b531-00ea2e5bda2d": "FeedBack Associated View",
+      "22981afa-2913-490f-80bc-903975c55465": "Active FeedBacks",
+      "2f2e7af0-f4f5-4324-9efa-0c9c6e194f84": "FeedBack Advanced Find View",
+      "442a928f-733c-4cf2-b976-dd6b01bb1071": "Inactive FeedBacks",
+      "5a907ec3-5064-42f6-9a45-51580af1885d": "FeedBack Lookup View"
+    }
+  },
+  {
+    "DisplayName": "Dep (FeedBacks)",
+    "Name": "cr371_feedback_cr371_dep",
+    "OptionSetInfoNameMapping": {
+      "852020000": "Sales",
+      "852020001": "Finance",
+      "852020002": "IT",
+      "852020003": "Hr"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "cr371_dep",
+        "OptionSetReferenceEntityName": "FeedBacks"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "cr371_dep",
+    "RelatedEntityName": "FeedBacks",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status (FeedBacks)",
+    "Name": "cr371_feedback_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "FeedBacks"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "FeedBacks",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (FeedBacks)",
+    "Name": "cr371_feedback_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "FeedBacks"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "FeedBacks",
+    "Type": "OptionSetInfo"
+  }
+]

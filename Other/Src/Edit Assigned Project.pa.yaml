@@ -1,0 +1,423 @@
+# ************************************************************************************************
+# Warning: YAML source code for Canvas Apps is in preview. The schema is being actively developed.
+# Content may be incomplete and subject to change.
+# This file is read-only and should only be used to review changes made within Power Apps Studio.
+# This file isn't used when loading the app. External editing, merging and conflict resolution are
+# not supported.
+# 
+# For more information, visit https://go.microsoft.com/fwlink/?linkid=2292623
+# ************************************************************************************************
+Screens:
+  Edit Assigned Project:
+    Properties:
+      LoadingSpinnerColor: =RGBA(56, 96, 178, 1)
+      OnVisible: =Set(varStatussCode, 852020003);
+    Children:
+      - Icon14_16:
+          Control: Classic/Icon@2.5.0
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(0, 18, 107, 1)
+            Height: =60
+            Icon: =Icon.Home
+            X: =28
+            Y: =1073
+      - Icon15_16:
+          Control: Classic/Icon@2.5.0
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(0, 18, 107, 1)
+            Height: =60
+            Icon: =Icon.Person
+            X: =536
+            Y: =1073
+      - Rectangle1_33:
+          Control: Rectangle@2.3.0
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Fill: =RGBA(219, 219, 219, 1)
+            Height: =4
+            Width: =640
+            Y: =1037
+      - Icon8_3:
+          Control: Classic/Icon@2.5.0
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(0, 18, 107, 1)
+            Height: =60
+            Icon: =Icon.Add
+            OnSelect: |+
+              =Navigate('Adding new Project',ScreenTransition.CoverRight);
+            X: =288
+            Y: =1073
+      - Button4_1:
+          Control: Classic/Button@2.2.0
+          Properties:
+            BorderColor: =ColorFade(Self.Fill, -15%)
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            DisplayMode: "=\r\nIf(\r\n       \r\n    IsBlank(DataCardValue12_2.Text) ||    \r\n    IsBlank(DatePicker2.SelectedDate) ||  \r\n    IsBlank(ComboBox1.SelectedItems) ||  \r\n                   \r\n    DisplayMode.Disabled,                \r\n    DisplayMode.Edit                     \r\n)\r\n"
+            Fill: =RGBA(56, 96, 178, 1)
+            Font: =Font.'Open Sans'
+            HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =ColorFade(RGBA(56, 96, 178, 1), -20%)
+            OnSelect: "=Set(\n    varUpProject,\n    Patch(\n        Projects,\n        LookUp(\n            Projects,\n            ProjectId = Gallery4.Selected.ProjectId\n        ),\n        {\n            'Project Name': DataCardValue12_11.Text,\n            Description:DataCardValue12_12.Text,\n            'Start Date':DatePicker1_1.SelectedDate,\n            'End Date':DatePicker2_2.SelectedDate,\n            Priority:ComboBox1_1.Selected.Value,\n            'Status (cr371_status)':ComboBox2_5.Selected.Value,\n            'Assigned Manager':ComboBox2_4.Selected\n        \n        }\n    )\n);\n\n\nIf(\n    !IsBlank(varUpProject),\n    Patch(\n        ProjectAssignmentsses,\n        LookUp(\n            ProjectAssignmentsses,\n            ProjectId.ProjectId = Gallery4.Selected.ProjectId\n        ),\n        {\n            \n            Name:ComboBox2_4.Selected\n        \n        }\n    \n    )\n);\n\n\n\nNavigate('Admin Dashboard',ScreenTransition.Cover);\nReset(DataCardValue12_2);\nReset(DataCardValue12_3);\nReset(DatePicker1);\nReset(DatePicker2);\nReset(ComboBox1);\nReset(ComboBox2_2);\nReset(ComboBox2_1);\n\n\n/*If(\n    !IsBlank(varProject),\n    Patch(\n        TeamMembers,\n        LookUp(\n            TeamMembers,\n            Name = ComboBox2_1.Selected.Name\n        ),\n        {\n            ProjectId: LookUp(Projects, ProjectId = varProject.ProjectId) \n        }\n    )\n);*/\n"
+            PressedBorderColor: =Self.Fill
+            PressedColor: =Self.Fill
+            PressedFill: =Self.Color
+            Text: ="Edit Project"
+            X: =180
+            Y: =936
+      - Rectangle1_34:
+          Control: Rectangle@2.3.0
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Fill: =RGBA(9, 33, 98, 1)
+            Height: =88
+            Width: =640
+      - Icon20_12:
+          Control: Classic/Icon@2.5.0
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            Icon: =Icon.ArrowLeft
+            OnSelect: =Navigate('Admin Dashboard',ScreenTransition.UnCover)
+            X: =28
+            Y: =12
+      - Icon21_11:
+          Control: Classic/Icon@2.5.0
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            Icon: =Icon.More
+            X: =536
+            Y: =12
+      - Label7_2:
+          Control: Label@2.5.1
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            Font: =Font.'Open Sans'
+            Height: =82
+            Size: =23
+            Text: ="Edit Project"
+            Width: =192
+            X: =224
+      - Canvas3_1:
+          Control: FluidGrid@2.3.0
+          Properties:
+            BorderThickness: =0
+            Height: =771
+            Width: =640
+            Y: =99
+          Children:
+            - DataCard8_1:
+                Control: DataCard@1.0.2
+                Properties:
+                  Height: =1183
+                  Width: =651
+                Children:
+                  - DataCardKey15_24:
+                      Control: Label@2.5.1
+                      Properties:
+                        BorderColor: =RGBA(0, 0, 0, 1)
+                        Color: =RGBA(0, 18, 107, 1)
+                        Font: =Font.'Open Sans'
+                        Height: =50
+                        Text: ="Project Name"
+                        Width: =493
+                        Wrap: =false
+                        X: =93
+                        Y: =25
+                  - DataCardValue12_11:
+                      Control: Classic/TextInput@2.3.2
+                      Properties:
+                        BorderColor: =RGBA(9, 33, 98, 1)
+                        Default: =Gallery4.Selected.'Project Name'
+                        DelayOutput: =true
+                        DisplayMode: =
+                        Font: =Font.'Open Sans'
+                        HoverBorderColor: =RGBA(0, 18, 107, 1)
+                        HoverFill: =RGBA(186, 202, 226, 1)
+                        PaddingLeft: =5
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                        Tooltip: =
+                        Width: =519
+                        X: =67
+                        Y: =75
+                  - DataCardKey15_25:
+                      Control: Label@2.5.1
+                      Properties:
+                        BorderColor: =RGBA(0, 0, 0, 1)
+                        Color: =RGBA(0, 18, 107, 1)
+                        Font: =Font.'Open Sans'
+                        Height: =48
+                        Text: ="Description"
+                        Width: =535
+                        Wrap: =false
+                        X: =67
+                        Y: =177
+                  - Label4_9:
+                      Control: Label@2.5.1
+                      Properties:
+                        BorderColor: =RGBA(0, 18, 107, 1)
+                        Color: =RGBA(255, 0, 0, 1)
+                        Font: =Font.'Open Sans'
+                        Height: =50
+                        Text: ="*"
+                        Width: =45
+                        X: =67
+                        Y: =27
+                  - DataCardValue12_12:
+                      Control: Classic/TextInput@2.3.2
+                      Properties:
+                        BorderColor: =RGBA(9, 33, 98, 1)
+                        Default: =Gallery4.Selected.'Description'
+                        DelayOutput: =true
+                        DisplayMode: =
+                        Font: =Font.'Open Sans'
+                        HoverBorderColor: =RGBA(0, 18, 107, 1)
+                        HoverFill: =RGBA(186, 202, 226, 1)
+                        PaddingLeft: =5
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                        Tooltip: =
+                        Width: =519
+                        X: =67
+                        Y: =225
+                  - DataCardKey15_26:
+                      Control: Label@2.5.1
+                      Properties:
+                        BorderColor: =RGBA(0, 0, 0, 1)
+                        Color: =RGBA(0, 18, 107, 1)
+                        Font: =Font.'Open Sans'
+                        Height: =48
+                        Text: ="Start Date"
+                        Width: =535
+                        Wrap: =false
+                        X: =67
+                        Y: =353
+                  - DatePicker1_1:
+                      Control: Classic/DatePicker@2.6.0
+                      Properties:
+                        BorderColor: =RGBA(0, 18, 107, 1)
+                        DefaultDate: =Gallery4.Selected.'Start Date'
+                        Font: =Font.'Open Sans'
+                        IconBackground: =RGBA(56, 96, 178, 1)
+                        IconFill: =RGBA(255, 255, 255, 1)
+                        OnChange: |+
+                          =If(
+                              DateValue(DatePicker1_1.SelectedDate) < DateValue(Gallery4.Selected.'Start Date'),
+                              Reset(DatePicker1_1);
+                              Notify("Error: You can't select a date earlier than the project start date", NotificationType.Error)
+                          )
+                        Width: =519
+                        X: =67
+                        Y: =401
+                  - DataCardKey15_27:
+                      Control: Label@2.5.1
+                      Properties:
+                        BorderColor: =RGBA(0, 0, 0, 1)
+                        Color: =RGBA(0, 18, 107, 1)
+                        Font: =Font.'Open Sans'
+                        Height: =50
+                        Text: ="End Date"
+                        Width: =475
+                        Wrap: =false
+                        X: =102
+                        Y: =511
+                  - DatePicker2_2:
+                      Control: Classic/DatePicker@2.6.0
+                      Properties:
+                        BorderColor: =RGBA(0, 18, 107, 1)
+                        DefaultDate: =Gallery4.Selected.'End Date'
+                        Font: =Font.'Open Sans'
+                        IconBackground: =RGBA(56, 96, 178, 1)
+                        IconFill: =RGBA(255, 255, 255, 1)
+                        OnChange: |+
+                          =If(DateValue(DatePicker2_2.SelectedDate) = DateValue(DatePicker1_1.SelectedDate),
+                             Reset(DatePicker2_2);
+                             Notify("End date cannot be the same as Start date.", NotificationType.Error));
+
+                          If(DateValue(DatePicker2_2.SelectedDate) < DateValue(DatePicker1_1.SelectedDate),
+                             Reset(DatePicker2_2);
+                             Notify("End date cannot be less than Start date.", NotificationType.Error)) 
+
+                          /*If(
+                              DateValue(DatePicker2_2.SelectedDate) <= DateValue(DatePicker1_1.SelectedDate),
+                              Reset(DatePicker2_2);
+                              Notify(
+                                  If(
+                                      DateValue(DatePicker2_2.SelectedDate) = DateValue(DatePicker1_1.SelectedDate),
+                                      "End date cannot be the same as Start date.",
+                                      "End date cannot be less than Start date."
+                                  ),
+                                  NotificationType.Error
+                              )
+                          )*/
+
+
+                        Width: =519
+                        X: =67
+                        Y: =561
+                  - Label4_10:
+                      Control: Label@2.5.1
+                      Properties:
+                        BorderColor: =RGBA(0, 18, 107, 1)
+                        Color: =RGBA(255, 0, 0, 1)
+                        Font: =Font.'Open Sans'
+                        Height: =50
+                        Text: ="*"
+                        Width: =45
+                        X: =67
+                        Y: =513
+                  - DataCardKey15_28:
+                      Control: Label@2.5.1
+                      Properties:
+                        BorderColor: =RGBA(0, 0, 0, 1)
+                        Color: =RGBA(0, 18, 107, 1)
+                        Font: =Font.'Open Sans'
+                        Height: =50
+                        Text: ="Priority"
+                        Width: =468
+                        Wrap: =false
+                        X: =93
+                        Y: =677
+                  - ComboBox2_4:
+                      Control: Classic/ComboBox@2.4.0
+                      Properties:
+                        BorderColor: =RGBA(0, 18, 107, 1)
+                        ChevronBackground: =RGBA(9, 33, 98, 1)
+                        ChevronFill: =RGBA(255, 255, 255, 1)
+                        ChevronHoverBackground: =ColorFade(RGBA(56, 96, 178, 1), -20%)
+                        ChevronHoverFill: =RGBA(255, 255, 255, 1)
+                        DefaultSelectedItems: =Gallery4.Selected.'Assigned Manager'
+                        DisplayFields: =["cr371_empid"]
+                        Font: =Font.'Open Sans'
+                        HoverFill: =RGBA(186, 202, 226, 1)
+                        IsSearchable: =false
+                        Items: |+
+                          =Filter(
+                              Choices([@Projects].'Assigned Manager'),
+                              Name in Filter(TeamMembers, Role = "Manager").Name
+                          )
+
+                          //ShowColumns(Filter(TeamMembers,Role='Role(TeamMembers)'.Manager),Name)
+
+                          //ShowColumns(Filter(TeamMembers, Role = "Manager"), Name)
+
+                        OnChange: |+
+                          =Set(
+                              varStatussCode,
+                              If(
+                                  IsEmpty(ComboBox2_4.SelectedItems),
+                                  852020000,  // "Not Assigned"
+                                  852020003   // "Assigned"
+                              )
+                          );
+                        PressedColor: =RGBA(255, 255, 255, 1)
+                        PressedFill: =RGBA(0, 18, 107, 1)
+                        SearchFields: =["cr371_empid"]
+                        SelectionColor: =RGBA(255, 255, 255, 1)
+                        SelectionFill: =RGBA(56, 96, 178, 1)
+                        Width: =519
+                        X: =67
+                        Y: =903
+                  - DataCardKey15_29:
+                      Control: Label@2.5.1
+                      Properties:
+                        BorderColor: =RGBA(0, 0, 0, 1)
+                        Color: =RGBA(0, 18, 107, 1)
+                        Font: =Font.'Open Sans'
+                        Height: =48
+                        Text: ="Assigned Manager"
+                        Width: =535
+                        Wrap: =false
+                        X: =67
+                        Y: =855
+                  - DataCardKey15_30:
+                      Control: Label@2.5.1
+                      Properties:
+                        BorderColor: =RGBA(0, 0, 0, 1)
+                        Color: =RGBA(0, 18, 107, 1)
+                        Font: =Font.'Open Sans'
+                        Height: =48
+                        Text: ="Status"
+                        Width: =535
+                        Wrap: =false
+                        X: =67
+                        Y: =1004
+                  - ComboBox2_5:
+                      Control: Classic/ComboBox@2.4.0
+                      Properties:
+                        BorderColor: =RGBA(0, 18, 107, 1)
+                        ChevronBackground: =RGBA(9, 33, 98, 1)
+                        ChevronFill: =RGBA(255, 255, 255, 1)
+                        ChevronHoverBackground: =ColorFade(RGBA(56, 96, 178, 1), -20%)
+                        ChevronHoverFill: =RGBA(255, 255, 255, 1)
+                        DefaultSelectedItems: |+
+                          =First(
+                              Filter(
+                                  Choices('Status (Projects)'),
+                                  Value = varStatussCode
+                              )
+                          )
+                        DisplayFields: =["Value"]
+                        DisplayMode: |+
+                          =If(
+                              IsEmpty(ComboBox2_4.SelectedItems),
+                              DisplayMode.View,
+                              DisplayMode.Edit
+                          )
+                        Font: =Font.'Open Sans'
+                        HoverFill: =RGBA(186, 202, 226, 1)
+                        Items: =Choices('Status (Projects)')
+                        PressedColor: =RGBA(255, 255, 255, 1)
+                        PressedFill: =RGBA(0, 18, 107, 1)
+                        SearchFields: =["Value"]
+                        SelectionColor: =RGBA(255, 255, 255, 1)
+                        SelectionFill: =RGBA(56, 96, 178, 1)
+                        Width: =519
+                        X: =67
+                        Y: =1052
+                  - Label4_11:
+                      Control: Label@2.5.1
+                      Properties:
+                        BorderColor: =RGBA(0, 18, 107, 1)
+                        Color: =RGBA(255, 0, 0, 1)
+                        Font: =Font.'Open Sans'
+                        Height: =50
+                        Text: ="*"
+                        Width: =45
+                        X: =67
+                        Y: =677
+                  - ComboBox1_1:
+                      Control: Classic/ComboBox@2.4.0
+                      Properties:
+                        BorderColor: =RGBA(0, 18, 107, 1)
+                        ChevronBackground: =RGBA(9, 33, 98, 1)
+                        ChevronFill: =RGBA(255, 255, 255, 1)
+                        ChevronHoverBackground: =ColorFade(RGBA(56, 96, 178, 1), -20%)
+                        ChevronHoverFill: =RGBA(255, 255, 255, 1)
+                        DefaultSelectedItems: |+
+                          =LookUp(Choices(Projects.Priority), Value = Gallery4.Selected.Priority)
+
+                        DisplayFields: =["Value"]
+                        Font: =Font.'Open Sans'
+                        Height: =68
+                        HoverFill: =RGBA(186, 202, 226, 1)
+                        Items: =Choices('Priority (Projects)')
+                        PressedColor: =RGBA(255, 255, 255, 1)
+                        PressedFill: =RGBA(0, 18, 107, 1)
+                        SearchFields: =["Value"]
+                        SelectionColor: =RGBA(255, 255, 255, 1)
+                        SelectionFill: =RGBA(56, 96, 178, 1)
+                        Width: =519
+                        X: =67
+                        Y: =727

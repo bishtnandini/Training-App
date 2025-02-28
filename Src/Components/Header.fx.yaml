@@ -1,0 +1,36 @@
+Header As CanvasComponent:
+    Fill: =RGBA(0, 0, 0, 0)
+    Height: =115
+    Width: =640
+    X: =0
+    Y: =0
+    ZIndex: =1
+
+    Icon1 As icon.Search:
+        Height: =60
+        Icon: =Icon.Search
+        X: =25
+        Y: =25
+        ZIndex: =2
+
+    TextInput1 As text:
+        BorderColor: =RGBA(237, 237, 237, 1)
+        Default: =
+        Height: =60
+        RadiusBottomLeft: =15
+        RadiusBottomRight: =15
+        RadiusTopLeft: =15
+        RadiusTopRight: =15
+        Size: =21
+        Width: =444
+        X: =102
+        Y: =25
+        ZIndex: =3
+
+    Icon3 As icon.Bell:
+        Height: =60
+        Icon: =Icon.Bell
+        X: =560
+        Y: =25
+        ZIndex: =4
+

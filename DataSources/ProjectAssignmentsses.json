@@ -1,0 +1,97 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "cr371_projectassignmentsses",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "cr371_projectassignmentss",
+    "Name": "ProjectAssignmentsses",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "cr371_Name": "Name",
+      "cr371_projectassignmentsid": "ProjectAssignmentsID",
+      "cr371_projectassignmentss_AsyncOperations": "System Jobs",
+      "cr371_projectassignmentss_BulkDeleteFailures": "Bulk Delete Failures",
+      "cr371_projectassignmentss_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "cr371_projectassignmentss_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "cr371_projectassignmentss_ProcessSession": "Process Sessions",
+      "cr371_projectassignmentss_SyncErrors": "Sync Errors",
+      "cr371_projectassignmentssid": "ProjectAssignmentss",
+      "cr371_ProjectId": "ProjectId",
+      "cr371_role": "Role",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "ProjectAssignmentsses",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "ProjectAssignmentsses (Views)",
+    "Name": "_cr371_projectassignmentss_views",
+    "RelatedEntityName": "ProjectAssignmentsses",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "0b367f41-108f-42a9-a897-4aba60f561c2": "ProjectAssignmentss Associated View",
+      "53368138-1439-42d1-9d22-0823af6ba062": "ProjectAssignmentss Advanced Find View",
+      "9b0d01a9-d764-45fa-85d4-0f6873ec9a6a": "Active ProjectAssignmentsses",
+      "bfe3d8ea-8f36-4734-b2b8-aa9dbb4c7e80": "ProjectAssignmentss Lookup View",
+      "c510d02c-510c-47c5-9847-2cd80684543d": "Inactive ProjectAssignmentsses"
+    }
+  },
+  {
+    "DisplayName": "Status (ProjectAssignmentsses)",
+    "Name": "cr371_projectassignmentss_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "ProjectAssignmentsses"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "ProjectAssignmentsses",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (ProjectAssignmentsses)",
+    "Name": "cr371_projectassignmentss_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "ProjectAssignmentsses"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "ProjectAssignmentsses",
+    "Type": "OptionSetInfo"
+  }
+]

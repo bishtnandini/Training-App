@@ -1,0 +1,377 @@
+"'Ticket Generate Form' As screen":
+
+    Rectangle1_13 As rectangle:
+        Fill: =RGBA(9, 33, 98, 1)
+        Height: =88
+        Width: =640
+        ZIndex: =1
+
+    Icon20_3 As icon.ArrowLeft:
+        Color: =RGBA(255, 255, 255, 1)
+        Icon: =Icon.ArrowLeft
+        OnSelect: =Back() 
+        X: =28
+        Y: =12
+        ZIndex: =2
+
+    Icon21_3 As icon.More:
+        Color: =RGBA(255, 255, 255, 1)
+        Icon: =Icon.More
+        X: =536
+        Y: =12
+        ZIndex: =3
+
+    Label7_1 As label:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =88
+        Size: =23
+        Text: ="Generate Ticket"
+        Width: =250
+        X: =189
+        ZIndex: =4
+
+    Icon14_6 As icon.Home:
+        Height: =60
+        Icon: =Icon.Home
+        X: =35
+        Y: =1076
+        ZIndex: =5
+
+    Icon15_6 As icon.Person:
+        Height: =60
+        Icon: =Icon.Person
+        X: =551
+        Y: =1076
+        ZIndex: =6
+
+    Rectangle1_14 As rectangle:
+        Fill: =RGBA(219, 219, 219, 1)
+        Height: =4
+        Width: =640
+        Y: =1072
+        ZIndex: =7
+
+    Icon23 As icon.Add:
+        Height: =60
+        Icon: =Icon.Add
+        X: =282
+        Y: =1076
+        ZIndex: =8
+
+    Canvas2 As fluidGrid.fluidGridWithBlankCard:
+        BorderThickness: =0
+        Height: =838
+        Width: =640
+        Y: =100
+        ZIndex: =9
+
+        DataCard2 As dataCard:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            BorderStyle: =BorderStyle.Solid
+            BorderThickness: =0
+            DisplayMode: =DisplayMode.Edit
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =1113
+            Width: =640
+            X: =0
+            Y: =0
+            ZIndex: =1
+
+            DataCardKey15_9 As label:
+                Height: =48
+                Size: =21
+                Text: ="Title"
+                Width: =452
+                Wrap: =false
+                X: =93
+                ZIndex: =1
+
+            DataCardValue12_4 As text:
+                BorderColor: =RGBA(9, 33, 98, 1)
+                Default: =
+                DelayOutput: =true
+                DisplayMode: =
+                Height: =70
+                PaddingLeft: =5
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Size: =21
+                Tooltip: =
+                Width: =519
+                X: =60
+                Y: =48
+                ZIndex: =2
+
+            DataCardKey15_10 As label:
+                Height: =48
+                Size: =21
+                Text: ="Description"
+                Width: =452
+                Wrap: =false
+                X: =93
+                Y: =147
+                ZIndex: =3
+
+            DataCardValue12_5 As text:
+                BorderColor: =RGBA(9, 33, 98, 1)
+                Default: =
+                DelayOutput: =true
+                DisplayMode: =
+                Height: =70
+                PaddingLeft: =5
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Size: =21
+                Tooltip: =
+                Width: =519
+                X: =60
+                Y: =195
+                ZIndex: =4
+
+            DataCardKey15_11 As label:
+                Height: =48
+                Size: =21
+                Text: ="Priority"
+                Width: =452
+                Wrap: =false
+                X: =93
+                Y: =292
+                ZIndex: =5
+
+            Dropdown1 As dropdown:
+                BorderColor: =RGBA(9, 33, 98, 1)
+                ChevronBackground: =RGBA(9, 33, 98, 1)
+                Height: =70
+                Items: |
+                    =Choices('Priority (Tickets)')
+                Size: =21
+                Width: =519
+                X: =60
+                Y: =340
+                ZIndex: =6
+
+            DataCardKey15_12 As label:
+                Height: =48
+                Size: =21
+                Text: ="Assigned To"
+                Width: =452
+                Wrap: =false
+                X: =93
+                Y: =615
+                ZIndex: =7
+
+            Dropdown1_1 As dropdown:
+                ChevronBackground: =RGBA(9, 33, 98, 1)
+                Height: =70
+                Items: |+
+                    =
+                    //Choices(Tickets.'Assign To')
+                    Filter(TeamMembers, Department = Text(Dropdown1_3.Selected.Value)).Name
+                    
+                    
+                    
+                Size: =21
+                Width: =519
+                X: =60
+                Y: =663
+                ZIndex: =8
+
+            Label4_13 As label:
+                Color: =RGBA(255, 0, 0, 1)
+                Height: =43
+                Size: =21
+                Text: ="*"
+                Width: =45
+                X: =60
+                Y: =5
+                ZIndex: =9
+
+            Label4_14 As label:
+                Color: =RGBA(255, 0, 0, 1)
+                Height: =43
+                Size: =21
+                Text: ="*"
+                Width: =45
+                X: =60
+                Y: =149
+                ZIndex: =10
+
+            Label4_15 As label:
+                Color: =RGBA(255, 0, 0, 1)
+                Height: =43
+                Size: =21
+                Text: ="*"
+                Width: =45
+                X: =60
+                Y: =297
+                ZIndex: =11
+
+            Label4_16 As label:
+                Color: =RGBA(255, 0, 0, 1)
+                Height: =43
+                Size: =21
+                Text: ="*"
+                Width: =45
+                X: =60
+                Y: =620
+                ZIndex: =12
+
+            DataCardKey15_13 As label:
+                Height: =51
+                Size: =21
+                Text: ="Status"
+                Width: =452
+                Wrap: =false
+                X: =60
+                Y: =782
+                ZIndex: =13
+
+            Dropdown1_2 As dropdown:
+                ChevronBackground: =RGBA(9, 33, 98, 1)
+                Default: ="Open"
+                DisplayMode: =DisplayMode.View
+                Height: =74
+                Items: =Choices('Status (Tickets)')
+                Size: =21
+                Width: =519
+                X: =60
+                Y: =833
+                ZIndex: =14
+
+            DataCardKey15_14 As label:
+                Height: =48
+                Size: =21
+                Text: ="Created By"
+                Width: =485
+                Wrap: =false
+                X: =60
+                Y: =954
+                ZIndex: =15
+
+            DataCardValue12_6 As text:
+                BorderColor: =RGBA(9, 33, 98, 1)
+                Default: =varLoggedInUser.Name
+                DelayOutput: =true
+                DisplayMode: =DisplayMode.View
+                Height: =70
+                PaddingLeft: =5
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Size: =21
+                Tooltip: =
+                Width: =519
+                X: =60
+                Y: =1002
+                ZIndex: =16
+
+            DataCardKey15_31 As label:
+                Height: =48
+                Size: =21
+                Text: ="Department"
+                Width: =452
+                Wrap: =false
+                X: =93
+                Y: =453
+                ZIndex: =17
+
+            Dropdown1_3 As dropdown:
+                ChevronBackground: =RGBA(9, 33, 98, 1)
+                Height: =70
+                Items: =Choices('Department (Tickets)')
+                Size: =21
+                Width: =519
+                X: =60
+                Y: =501
+                ZIndex: =18
+
+            Label4_20 As label:
+                Color: =RGBA(255, 0, 0, 1)
+                Height: =43
+                Size: =21
+                Text: ="*"
+                Width: =45
+                X: =60
+                Y: =458
+                ZIndex: =19
+
+    Button5 As button:
+        DisplayMode: |-
+            =If(
+                IsBlank(DataCardValue12_4.Text) ||  IsBlank(DataCardValue12_5.Text) || IsBlank(Dropdown1.Selected.Value) ||IsBlank(Dropdown1_3.Selected.Value),
+                DisplayMode.Disabled,
+                DisplayMode.Edit
+            )
+        Fill: =RGBA(9, 33, 98, 1)
+        Height: =70
+        OnSelect: |-
+            =Set(
+                VarTicket,
+                Patch(
+                    Tickets,
+                    Defaults(Tickets),
+                    {
+                        Title: DataCardValue12_4.Text,
+                        Description: DataCardValue12_5.Text,
+                        Priority: Dropdown1.Selected.Value,
+                        'Status (cr371_status)': Dropdown1_2.Selected.Value,
+                        'Assign To': LookUp(TeamMembers,Name=Dropdown1_1.Selected.Name),
+                        'Created By (cr371_CreatedBy)': LookUp(TeamMembers,Name=varLoggedInUser.Name),
+                        Department:Dropdown1_3.Selected.Value
+                    }
+                )
+            );
+            Navigate(
+                'Employee Dashboard',
+                ScreenTransition.Cover
+            );
+            Reset(DataCardValue12_4);
+            Reset(DataCardValue12_5);
+            Reset(Dropdown1);
+            Reset(Dropdown1_2);
+            Reset(Dropdown1_1);
+            /*If(
+                !IsBlank(VarTicket),
+                Patch(
+                    TeamMembers,
+                    LookUp(
+                        TeamMembers,
+                        Name = Dropdown1_1.Selected.Name
+                    ),
+                    {
+                        'Assigned Ticket': LookUp(
+                            Tickets,
+                            TickID = VarTicket.TickID
+                        )
+                    }
+                )
+            );
+            If(
+                !IsBlank(VarTicket),
+                Patch(
+                    TeamMembers,
+                    LookUp(
+                        TeamMembers,
+                        Name = varLoggedInUser.Name
+                    ),
+                    {
+                        TickId: LookUp(
+                            Tickets,
+                            TickID = VarTicket.TickID
+                        )
+                    }
+                )
+            );
+            */
+        Size: =24
+        Text: ="Generate"
+        Width: =280
+        X: =174
+        Y: =970
+        ZIndex: =10
+

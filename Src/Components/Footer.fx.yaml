@@ -1,0 +1,29 @@
+Footer As CanvasComponent:
+    Fill: =RGBA(0, 0, 0, 0)
+    Height: =68
+    Width: =640
+    X: =0
+    Y: =0
+    ZIndex: =1
+
+    Icon2 As icon.Home:
+        Height: =60
+        Icon: =Icon.Home
+        X: =36
+        Y: =4
+        ZIndex: =1
+
+    Icon5 As icon.Add:
+        Height: =60
+        Icon: =Icon.Add
+        X: =287
+        Y: =4
+        ZIndex: =2
+
+    Icon6 As icon.Person:
+        Height: =60
+        Icon: =Icon.Person
+        X: =538
+        Y: =4
+        ZIndex: =3
+

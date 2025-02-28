@@ -1,0 +1,182 @@
+"'Manager Feedback Screen' As screen":
+    OnVisible: |
+        =/*Set(
+            varAssignedFBID,
+            LookUp(FeedBacks, AssignedTo.Name = varLoggedInUser.Name,FBID)
+        )*/
+        
+        ClearCollect(
+            colAssignedFBIDs,
+            Filter(FeedBacks, AssignedTo.Name = varLoggedInUser.Name)
+        );
+
+    Icon14_12 As icon.Home:
+        Height: =60
+        Icon: =Icon.Home
+        X: =35
+        Y: =1065
+        ZIndex: =1
+
+    Icon15_12 As icon.Person:
+        Height: =60
+        Icon: =Icon.Person
+        X: =551
+        Y: =1065
+        ZIndex: =2
+
+    Rectangle1_25 As rectangle:
+        Fill: =RGBA(237, 237, 237, 1)
+        Height: =4
+        Width: =640
+        Y: =1049
+        ZIndex: =3
+
+    Icon4_5 As icon.Search:
+        Color: =RGBA(9, 33, 98, 1)
+        Icon: =Icon.Search
+        X: =35
+        Y: =111
+        ZIndex: =4
+
+    TextInput2_5 As text:
+        BorderColor: =RGBA(202, 202, 202, 1)
+        Default: =
+        Height: =64
+        RadiusBottomLeft: =15
+        RadiusBottomRight: =15
+        RadiusTopLeft: =15
+        RadiusTopRight: =15
+        Size: =21
+        Width: =493
+        X: =111
+        Y: =111
+        ZIndex: =5
+
+    Rectangle1_26 As rectangle:
+        Fill: =RGBA(9, 33, 98, 1)
+        Height: =88
+        Width: =640
+        ZIndex: =6
+
+    Label6_11 As label:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =73
+        Size: =23
+        Text: ="Feedback Response"
+        Width: =311
+        X: =190
+        Y: =7
+        ZIndex: =7
+
+    Icon20_9 As icon.ArrowLeft:
+        Color: =RGBA(255, 255, 255, 1)
+        Icon: =Icon.ArrowLeft
+        OnSelect: =Navigate('Manager Dashboard',ScreenTransition.UnCover)
+        X: =35
+        Y: =12
+        ZIndex: =8
+
+    Icon21_8 As icon.More:
+        Color: =RGBA(255, 255, 255, 1)
+        Icon: =Icon.More
+        X: =551
+        Y: =11
+        ZIndex: =9
+
+    "Gallery3 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+        DelayItemLoading: =true
+        Height: =836
+        Items: |-
+            =//Filter(FeedBacks, FBID = varAssignedFBID)
+            colAssignedFBIDs
+        Layout: =Layout.Vertical
+        LoadingSpinner: =LoadingSpinner.Data
+        TemplatePadding: =0
+        TemplateSize: =176
+        Width: =605
+        X: =35
+        Y: =195
+        ZIndex: =10
+
+        Title4 As label:
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Semibold)
+            Height: =Self.Size * 1.8
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =23
+            Text: =LookUp(FeedBacks,FBID=ThisItem.FBID,'Issue Name')
+            VerticalAlign: =VerticalAlign.Top
+            Width: =Parent.TemplateWidth - 173
+            X: =25
+            Y: =15
+            ZIndex: =2
+
+        Subtitle3 As label:
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+            Height: =Self.Size * 1.8
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =20
+            Text: |-
+                ="Description : "& LookUp(FeedBacks,FBID=ThisItem.FBID, Description)
+            VerticalAlign: =VerticalAlign.Top
+            Width: =Title4.Width
+            X: =25
+            Y: =67
+            ZIndex: =3
+
+        Separator3 As rectangle:
+            Height: =8
+            OnSelect: =Select(Parent)
+            Width: =Parent.TemplateWidth
+            Y: =Parent.TemplateHeight - Self.Height
+            ZIndex: =5
+
+        Rectangle7 As rectangle:
+            Height: =Parent.TemplateHeight - Separator3.Height
+            OnSelect: =Select(Parent)
+            Visible: =ThisItem.IsSelected
+            Width: =4
+            ZIndex: =6
+
+        Subtitle4_2 As label:
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+            Height: =36
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =20
+            Text: =LookUp(FeedBacks,FBID=ThisItem.FBID,Department)
+            VerticalAlign: =VerticalAlign.Top
+            Width: =182
+            X: =102
+            Y: =121
+            ZIndex: =7
+
+        Icon34_1 As icon.Post:
+            Height: =54
+            Icon: =Icon.Post
+            OnSelect: =Select(Parent)
+            Width: =53
+            X: =25
+            Y: =112
+            ZIndex: =8
+
+        Icon27 As icon.Pin:
+            Color: =RGBA(166, 166, 166, 1)
+            Height: =54
+            Icon: =Icon.Pin
+            OnSelect: =
+            Width: =53
+            X: =525
+            Y: =57
+            ZIndex: =9
+

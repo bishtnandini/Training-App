@@ -1,0 +1,438 @@
+# ************************************************************************************************
+# Warning: YAML source code for Canvas Apps is in preview. The schema is being actively developed.
+# Content may be incomplete and subject to change.
+# This file is read-only and should only be used to review changes made within Power Apps Studio.
+# This file isn't used when loading the app. External editing, merging and conflict resolution are
+# not supported.
+# 
+# For more information, visit https://go.microsoft.com/fwlink/?linkid=2292623
+# ************************************************************************************************
+Screens:
+  Manager Dashboard:
+    Properties:
+      LoadingSpinnerColor: =RGBA(56, 96, 178, 1)
+      OnVisible: "=UpdateContext({VarDetails: false}); "
+    Children:
+      - Icon14:
+          Control: Classic/Icon@2.5.0
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(0, 18, 107, 1)
+            Height: =60
+            Icon: =Icon.Home
+            X: =35
+            Y: =1061
+      - Icon15:
+          Control: Classic/Icon@2.5.0
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(0, 18, 107, 1)
+            Height: =60
+            Icon: =Icon.Person
+            X: =551
+            Y: =1061
+      - Gallery6:
+          Control: Gallery@2.15.0
+          Variant: BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Height: =834
+            Items: |+
+              =//Projects
+
+              Filter(
+                  Projects,
+                  'Assigned Manager'.Name = varLoggedInUser.Name
+              )
+            OnSelect: =Navigate('Project Details',ScreenTransition.CoverRight)
+            TemplateSize: =199
+            Width: =580
+            X: =35
+            Y: =189
+          Children:
+            - Subtitle5:
+                Control: Label@2.5.1
+                Properties:
+                  BorderColor: =RGBA(0, 0, 0, 1)
+                  Font: =Font.'Open Sans'
+                  FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                  Height: =Self.Size * 1.8
+                  OnSelect: =Select(Parent)
+                  PaddingBottom: =0
+                  PaddingLeft: =0
+                  PaddingRight: =0
+                  PaddingTop: =0
+                  Size: =12
+                  Text: =ThisItem.ProjectId
+                  VerticalAlign: =VerticalAlign.Top
+                  Width: =
+                  X: =
+                  Y: =
+            - Separator8:
+                Control: Rectangle@2.3.0
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Fill: =RGBA(255, 255, 255, 1)
+                  Height: =8
+                  OnSelect: =Select(Parent)
+                  Width: =Parent.TemplateWidth
+                  Y: =Parent.TemplateHeight - Self.Height
+            - Rectangle6:
+                Control: Rectangle@2.3.0
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Fill: =RGBA(0, 18, 107, 1)
+                  Height: =Parent.TemplateHeight - Separator8.Height
+                  OnSelect: =Select(Parent)
+                  Visible: =ThisItem.IsSelected
+                  Width: =4
+            - Title3_4:
+                Control: Label@2.5.1
+                Properties:
+                  BorderColor: =RGBA(0, 0, 0, 1)
+                  Color: =RGBA(50, 49, 48, 1)
+                  Font: =Font.'Open Sans'
+                  FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                  Height: =36
+                  OnSelect: =Select(Parent)
+                  PaddingBottom: =0
+                  PaddingLeft: =0
+                  PaddingRight: =0
+                  PaddingTop: =0
+                  Size: =23
+                  Text: =ThisItem.'Project Name'
+                  VerticalAlign: =VerticalAlign.Top
+                  Width: =Parent.TemplateWidth - 173
+                  X: =25
+                  Y: =21
+            - Icon11_1:
+                Control: Classic/Icon@2.5.0
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Color: =RGBA(0, 18, 107, 1)
+                  Icon: =Icon.CalendarBlank
+                  OnSelect: =Select(Parent)
+                  Width: =49
+                  X: =25
+                  Y: =123
+            - Icon12_1:
+                Control: Classic/Icon@2.5.0
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Color: |+
+                    =If(
+                        ThisItem.Priority = 852020000, RGBA(255, 0, 0, 1),   // Red for High
+                        ThisItem.Priority = 852020001, RGBA(0, 255, 0, 1),   // Green for Medium
+                        ThisItem.Priority = 852020002, RGBA(255, 255, 0, 1), // Yellow for Low
+                        RGBA(0, 0, 0, 0)  // Default: transparent
+                    )
+                  Height: =47
+                  Icon: =Icon.Flag
+                  OnSelect: =Select(Parent)
+                  Width: =46
+                  X: =293
+                  Y: =131
+            - Title3_6:
+                Control: Label@2.5.1
+                Properties:
+                  BorderColor: =RGBA(0, 0, 0, 1)
+                  Color: =RGBA(50, 49, 48, 1)
+                  Font: =Font.'Open Sans'
+                  FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                  Height: =33
+                  OnSelect: =Select(Parent)
+                  PaddingBottom: =0
+                  PaddingLeft: =0
+                  PaddingRight: =0
+                  PaddingTop: =0
+                  Size: =20
+                  Text: |-
+                    =//ThisItem.'End Date'
+                    Text(ThisItem.'End Date', "[$-en-US]mm/dd/yyyy")
+                  VerticalAlign: =VerticalAlign.Top
+                  Width: =191
+                  X: =91
+                  Y: =138
+            - Title3_8:
+                Control: Label@2.5.1
+                Properties:
+                  BorderColor: =RGBA(0, 0, 0, 1)
+                  Color: =RGBA(50, 49, 48, 1)
+                  Font: =Font.'Open Sans'
+                  FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                  Height: =36
+                  OnSelect: =Select(Parent)
+                  PaddingBottom: =0
+                  PaddingLeft: =0
+                  PaddingRight: =0
+                  PaddingTop: =0
+                  Size: =20
+                  Text: |-
+                    = "Status : "& ThisItem.'Status (cr371_status)'
+                  VerticalAlign: =VerticalAlign.Top
+                  Width: =268
+                  X: =25
+                  Y: =76
+            - Title3_9:
+                Control: Label@2.5.1
+                Properties:
+                  BorderColor: =RGBA(0, 0, 0, 1)
+                  Color: =RGBA(50, 49, 48, 1)
+                  Font: =Font.'Open Sans'
+                  FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                  Height: =33
+                  OnSelect: =Select(Parent)
+                  PaddingBottom: =0
+                  PaddingLeft: =0
+                  PaddingRight: =0
+                  PaddingTop: =0
+                  Size: =19
+                  Text: =ThisItem.Priority
+                  VerticalAlign: =VerticalAlign.Top
+                  Width: =191
+                  X: =369
+                  Y: =138
+      - Rectangle1_2:
+          Control: Rectangle@2.3.0
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Fill: =RGBA(219, 219, 219, 1)
+            Height: =4
+            Width: =640
+            Y: =1057
+      - Rectangle1_7:
+          Control: Rectangle@2.3.0
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Fill: =RGBA(9, 33, 98, 1)
+            Height: =88
+            Width: =640
+      - Icon13_1:
+          Control: Classic/Icon@2.5.0
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            Icon: =Icon.Bell
+            X: =551
+            Y: =12
+      - Icon17_1:
+          Control: Classic/Icon@2.5.0
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            Icon: =Icon.Hamburger
+            OnSelect: "=UpdateContext({VarDetails: true}); "
+            X: =22
+            Y: =12
+      - Label6_1:
+          Control: Label@2.5.1
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            Font: =Font.'Open Sans'
+            Height: =88
+            Size: =23
+            Text: ="Manager Dashboard"
+            Width: =313
+            X: =168
+      - Icon4_1:
+          Control: Classic/Icon@2.5.0
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(9, 33, 98, 1)
+            Icon: =Icon.Search
+            X: =22
+            Y: =109
+      - TextInput2_1:
+          Control: Classic/TextInput@2.3.2
+          Properties:
+            BorderColor: =RGBA(219, 219, 219, 1)
+            Default: =
+            Font: =Font.'Open Sans'
+            Height: =64
+            HoverBorderColor: =RGBA(0, 18, 107, 1)
+            HoverFill: =RGBA(186, 202, 226, 1)
+            RadiusBottomLeft: =15
+            RadiusBottomRight: =15
+            RadiusTopLeft: =15
+            RadiusTopRight: =15
+            Width: =423
+            X: =99
+            Y: =109
+      - Icon19_1:
+          Control: Classic/Icon@2.5.0
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(0, 18, 107, 1)
+            Icon: =Icon.Filter
+            X: =551
+            Y: =109
+      - Rectangle5_2:
+          Control: Rectangle@2.3.0
+          Group: Group2_2
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Fill: =RGBA(255, 250, 250, 1)
+            Height: =1136
+            Visible: =VarDetails
+            Width: =528
+      - Image3_2:
+          Control: Image@2.2.3
+          Group: Group2_2
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Height: =276
+            Image: =varLoggedInUser.EmpImg
+            Visible: =VarDetails
+            Width: =333
+            X: =109
+            Y: =88
+      - Label15_2:
+          Control: Label@2.5.1
+          Group: Group2_2
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Font: =Font.'Open Sans'
+            Height: =56
+            Text: =varLoggedInUser.Name
+            Visible: =VarDetails
+            Width: =196
+            X: =177
+            Y: =383
+      - Icon28_2:
+          Control: Classic/Icon@2.5.0
+          Group: Group2_2
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(255, 0, 0, 1)
+            Height: =60
+            Icon: =Icon.Leave
+            Visible: =VarDetails
+            Width: =62
+            X: =87
+            Y: =996
+      - Icon29_2:
+          Control: Classic/Icon@2.5.0
+          Group: Group2_2
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(0, 18, 107, 1)
+            Height: =60
+            Icon: =Icon.Globe
+            Visible: =VarDetails
+            Width: =62
+            X: =74
+            Y: =862
+      - Icon30_2:
+          Control: Classic/Icon@2.5.0
+          Group: Group2_2
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(0, 18, 107, 1)
+            Height: =60
+            Icon: =Icon.Support
+            Visible: =VarDetails
+            Width: =62
+            X: =74
+            Y: =512
+      - Icon31_2:
+          Control: Classic/Icon@2.5.0
+          Group: Group2_2
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(0, 18, 107, 1)
+            Height: =60
+            Icon: =Icon.Settings
+            Visible: =VarDetails
+            Width: =62
+            X: =74
+            Y: =740
+      - Label16_14:
+          Control: Label@2.5.1
+          Group: Group2_2
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Font: =Font.'Open Sans'
+            Height: =61
+            Text: ="Sign Out"
+            Visible: =VarDetails
+            Width: =258
+            X: =177
+            Y: =996
+      - Label16_13:
+          Control: Label@2.5.1
+          Group: Group2_2
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Font: =Font.'Open Sans'
+            Height: =61
+            Text: ="Language"
+            Visible: =VarDetails
+            Width: =258
+            X: =177
+            Y: =862
+      - Label16_12:
+          Control: Label@2.5.1
+          Group: Group2_2
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Font: =Font.'Open Sans'
+            Height: =61
+            Text: ="Settings"
+            Visible: =VarDetails
+            Width: =258
+            X: =177
+            Y: =740
+      - Label16_11:
+          Control: Label@2.5.1
+          Group: Group2_2
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Font: =Font.'Open Sans'
+            Height: =61
+            OnSelect: =Navigate('Manager Feedback Screen',ScreenTransition.UnCover)
+            Text: ="Assigned Feedback"
+            Visible: =VarDetails
+            Width: =290
+            X: =177
+            Y: =625
+      - Label16_10:
+          Control: Label@2.5.1
+          Group: Group2_2
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Font: =Font.'Open Sans'
+            Height: =61
+            OnSelect: =Navigate('Ticket Generate Form')
+            Text: ="Support"
+            Visible: =VarDetails
+            Width: =258
+            X: =177
+            Y: =512
+      - Icon32_2:
+          Control: Classic/Icon@2.5.0
+          Group: Group2_2
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(0, 18, 107, 1)
+            Height: =60
+            Icon: =Icon.Cancel
+            OnSelect: |-
+              =UpdateContext({VarDetails: false});
+              Navigate('Manager Dashboard',ScreenTransition.CoverRight)
+            Visible: =VarDetails
+            Width: =62
+            X: =460
+            Y: =16
+      - Icon33_2:
+          Control: Classic/Icon@2.5.0
+          Group: Group2_2
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(0, 18, 107, 1)
+            Height: =60
+            Icon: =Icon.History
+            Visible: =VarDetails
+            Width: =62
+            X: =74
+            Y: =626

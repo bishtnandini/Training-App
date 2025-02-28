@@ -1,0 +1,220 @@
+# ************************************************************************************************
+# Warning: YAML source code for Canvas Apps is in preview. The schema is being actively developed.
+# Content may be incomplete and subject to change.
+# This file is read-only and should only be used to review changes made within Power Apps Studio.
+# This file isn't used when loading the app. External editing, merging and conflict resolution are
+# not supported.
+# 
+# For more information, visit https://go.microsoft.com/fwlink/?linkid=2292623
+# ************************************************************************************************
+Screens:
+  Manager Feedback Screen:
+    Properties:
+      LoadingSpinnerColor: =RGBA(56, 96, 178, 1)
+      OnVisible: |+
+        =/*Set(
+            varAssignedFBID,
+            LookUp(FeedBacks, AssignedTo.Name = varLoggedInUser.Name,FBID)
+        )*/
+
+        ClearCollect(
+            colAssignedFBIDs,
+            Filter(FeedBacks, AssignedTo.Name = varLoggedInUser.Name)
+        );
+    Children:
+      - Icon14_12:
+          Control: Classic/Icon@2.5.0
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(0, 18, 107, 1)
+            Height: =60
+            Icon: =Icon.Home
+            X: =35
+            Y: =1065
+      - Icon15_12:
+          Control: Classic/Icon@2.5.0
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(0, 18, 107, 1)
+            Height: =60
+            Icon: =Icon.Person
+            X: =551
+            Y: =1065
+      - Rectangle1_25:
+          Control: Rectangle@2.3.0
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Fill: =RGBA(237, 237, 237, 1)
+            Height: =4
+            Width: =640
+            Y: =1049
+      - Icon4_5:
+          Control: Classic/Icon@2.5.0
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(9, 33, 98, 1)
+            Icon: =Icon.Search
+            X: =35
+            Y: =111
+      - TextInput2_5:
+          Control: Classic/TextInput@2.3.2
+          Properties:
+            BorderColor: =RGBA(202, 202, 202, 1)
+            Default: =
+            Font: =Font.'Open Sans'
+            Height: =64
+            HoverBorderColor: =RGBA(0, 18, 107, 1)
+            HoverFill: =RGBA(186, 202, 226, 1)
+            RadiusBottomLeft: =15
+            RadiusBottomRight: =15
+            RadiusTopLeft: =15
+            RadiusTopRight: =15
+            Width: =493
+            X: =111
+            Y: =111
+      - Rectangle1_26:
+          Control: Rectangle@2.3.0
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Fill: =RGBA(9, 33, 98, 1)
+            Height: =88
+            Width: =640
+      - Label6_11:
+          Control: Label@2.5.1
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            Font: =Font.'Open Sans'
+            Height: =73
+            Size: =23
+            Text: ="Feedback Response"
+            Width: =311
+            X: =190
+            Y: =7
+      - Icon20_9:
+          Control: Classic/Icon@2.5.0
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            Icon: =Icon.ArrowLeft
+            OnSelect: =Navigate('Manager Dashboard',ScreenTransition.UnCover)
+            X: =35
+            Y: =12
+      - Icon21_8:
+          Control: Classic/Icon@2.5.0
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            Icon: =Icon.More
+            X: =551
+            Y: =11
+      - Gallery3:
+          Control: Gallery@2.15.0
+          Variant: BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Height: =836
+            Items: |-
+              =//Filter(FeedBacks, FBID = varAssignedFBID)
+              colAssignedFBIDs
+            TemplateSize: =176
+            Width: =605
+            X: =35
+            Y: =195
+          Children:
+            - Title4:
+                Control: Label@2.5.1
+                Properties:
+                  BorderColor: =RGBA(0, 0, 0, 1)
+                  Color: =RGBA(50, 49, 48, 1)
+                  Font: =Font.'Open Sans'
+                  FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Semibold)
+                  Height: =Self.Size * 1.8
+                  OnSelect: =Select(Parent)
+                  PaddingBottom: =0
+                  PaddingLeft: =0
+                  PaddingRight: =0
+                  PaddingTop: =0
+                  Size: =23
+                  Text: =LookUp(FeedBacks,FBID=ThisItem.FBID,'Issue Name')
+                  VerticalAlign: =VerticalAlign.Top
+                  Width: =Parent.TemplateWidth - 173
+                  X: =25
+                  Y: =15
+            - Subtitle3:
+                Control: Label@2.5.1
+                Properties:
+                  BorderColor: =RGBA(0, 0, 0, 1)
+                  Font: =Font.'Open Sans'
+                  FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                  Height: =Self.Size * 1.8
+                  OnSelect: =Select(Parent)
+                  PaddingBottom: =0
+                  PaddingLeft: =0
+                  PaddingRight: =0
+                  PaddingTop: =0
+                  Size: =20
+                  Text: |-
+                    ="Description : "& LookUp(FeedBacks,FBID=ThisItem.FBID, Description)
+                  VerticalAlign: =VerticalAlign.Top
+                  Width: =Title4.Width
+                  X: =25
+                  Y: =67
+            - Separator3:
+                Control: Rectangle@2.3.0
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Fill: =RGBA(255, 255, 255, 1)
+                  Height: =8
+                  OnSelect: =Select(Parent)
+                  Width: =Parent.TemplateWidth
+                  Y: =Parent.TemplateHeight - Self.Height
+            - Rectangle7:
+                Control: Rectangle@2.3.0
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Fill: =RGBA(0, 18, 107, 1)
+                  Height: =Parent.TemplateHeight - Separator3.Height
+                  OnSelect: =Select(Parent)
+                  Visible: =ThisItem.IsSelected
+                  Width: =4
+            - Subtitle4_2:
+                Control: Label@2.5.1
+                Properties:
+                  BorderColor: =RGBA(0, 0, 0, 1)
+                  Font: =Font.'Open Sans'
+                  FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                  Height: =36
+                  OnSelect: =Select(Parent)
+                  PaddingBottom: =0
+                  PaddingLeft: =0
+                  PaddingRight: =0
+                  PaddingTop: =0
+                  Size: =20
+                  Text: =LookUp(FeedBacks,FBID=ThisItem.FBID,Department)
+                  VerticalAlign: =VerticalAlign.Top
+                  Width: =182
+                  X: =102
+                  Y: =121
+            - Icon34_1:
+                Control: Classic/Icon@2.5.0
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Color: =RGBA(0, 18, 107, 1)
+                  Height: =54
+                  Icon: =Icon.Post
+                  OnSelect: =Select(Parent)
+                  Width: =53
+                  X: =25
+                  Y: =112
+            - Icon27:
+                Control: Classic/Icon@2.5.0
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Color: =RGBA(166, 166, 166, 1)
+                  Height: =54
+                  Icon: =Icon.Pin
+                  OnSelect: =
+                  Width: =53
+                  X: =525
+                  Y: =57

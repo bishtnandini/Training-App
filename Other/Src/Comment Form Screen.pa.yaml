@@ -1,0 +1,327 @@
+# ************************************************************************************************
+# Warning: YAML source code for Canvas Apps is in preview. The schema is being actively developed.
+# Content may be incomplete and subject to change.
+# This file is read-only and should only be used to review changes made within Power Apps Studio.
+# This file isn't used when loading the app. External editing, merging and conflict resolution are
+# not supported.
+# 
+# For more information, visit https://go.microsoft.com/fwlink/?linkid=2292623
+# ************************************************************************************************
+Screens:
+  Comment Form Screen:
+    Properties:
+      LoadingSpinnerColor: =RGBA(56, 96, 178, 1)
+    Children:
+      - Canvas4:
+          Control: FluidGrid@2.3.0
+          Properties:
+            BorderThickness: =0
+            Height: =867
+            Width: =Parent.Width
+            Y: =88
+          Children:
+            - DataCard3:
+                Control: DataCard@1.0.2
+                Properties:
+                  Height: =847
+                  Width: =Parent.Width
+                Children:
+                  - DataCardKey15_50:
+                      Control: Label@2.5.1
+                      Properties:
+                        BorderColor: =RGBA(0, 0, 0, 1)
+                        Color: =RGBA(0, 18, 107, 1)
+                        Font: =Font.'Open Sans'
+                        Height: =50
+                        Text: ="Comment Name"
+                        Width: =493
+                        Wrap: =false
+                        X: =89
+                        Y: =30
+                  - DataCardValue12_19:
+                      Control: Classic/TextInput@2.3.2
+                      Properties:
+                        BorderColor: =RGBA(9, 33, 98, 1)
+                        Default: =
+                        DelayOutput: =true
+                        DisplayMode: =
+                        Font: =Font.'Open Sans'
+                        HoverBorderColor: =RGBA(0, 18, 107, 1)
+                        HoverFill: =RGBA(186, 202, 226, 1)
+                        PaddingLeft: =5
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                        Tooltip: =
+                        Width: =519
+                        X: =63
+                        Y: =80
+                  - Label4_32:
+                      Control: Label@2.5.1
+                      Properties:
+                        BorderColor: =RGBA(0, 18, 107, 1)
+                        Color: =RGBA(255, 0, 0, 1)
+                        Font: =Font.'Open Sans'
+                        Height: =50
+                        Text: ="*"
+                        Width: =45
+                        X: =63
+                        Y: =32
+                  - DataCardKey15_51:
+                      Control: Label@2.5.1
+                      Properties:
+                        BorderColor: =RGBA(0, 0, 0, 1)
+                        Color: =RGBA(0, 18, 107, 1)
+                        Font: =Font.'Open Sans'
+                        Height: =50
+                        Text: ="Description"
+                        Width: =493
+                        Wrap: =false
+                        X: =89
+                        Y: =190
+                  - DataCardValue12_20:
+                      Control: Classic/TextInput@2.3.2
+                      Properties:
+                        BorderColor: =RGBA(9, 33, 98, 1)
+                        Default: =
+                        DelayOutput: =true
+                        DisplayMode: =
+                        Font: =Font.'Open Sans'
+                        HoverBorderColor: =RGBA(0, 18, 107, 1)
+                        HoverFill: =RGBA(186, 202, 226, 1)
+                        PaddingLeft: =5
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                        Tooltip: =
+                        Width: =519
+                        X: =63
+                        Y: =240
+                  - Label4_33:
+                      Control: Label@2.5.1
+                      Properties:
+                        BorderColor: =RGBA(0, 18, 107, 1)
+                        Color: =RGBA(255, 0, 0, 1)
+                        Font: =Font.'Open Sans'
+                        Height: =50
+                        Text: ="*"
+                        Width: =45
+                        X: =63
+                        Y: =192
+                  - DataCardKey15_52:
+                      Control: Label@2.5.1
+                      Properties:
+                        BorderColor: =RGBA(0, 0, 0, 1)
+                        Color: =RGBA(0, 18, 107, 1)
+                        Font: =Font.'Open Sans'
+                        Height: =50
+                        Text: ="Designation :"
+                        Width: =493
+                        Wrap: =false
+                        X: =89
+                        Y: =350
+                  - Label4_34:
+                      Control: Label@2.5.1
+                      Properties:
+                        BorderColor: =RGBA(0, 18, 107, 1)
+                        Color: =RGBA(255, 0, 0, 1)
+                        Font: =Font.'Open Sans'
+                        Height: =50
+                        Text: ="*"
+                        Width: =45
+                        X: =63
+                        Y: =352
+                  - ComboBox4_1:
+                      Control: Classic/ComboBox@2.4.0
+                      Properties:
+                        BorderColor: =RGBA(0, 18, 107, 1)
+                        ChevronBackground: =RGBA(56, 96, 178, 1)
+                        ChevronFill: =RGBA(255, 255, 255, 1)
+                        ChevronHoverBackground: =ColorFade(RGBA(56, 96, 178, 1), -20%)
+                        ChevronHoverFill: =RGBA(255, 255, 255, 1)
+                        DisplayFields: =["Value","Value"]
+                        Font: =Font.'Open Sans'
+                        HoverFill: =RGBA(186, 202, 226, 1)
+                        Items: =["Manager", "Team Member"]
+                        OnChange: =
+                        PressedColor: =RGBA(255, 255, 255, 1)
+                        PressedFill: =RGBA(0, 18, 107, 1)
+                        SearchFields: =["Value"]
+                        SelectionColor: =RGBA(255, 255, 255, 1)
+                        SelectionFill: =RGBA(56, 96, 178, 1)
+                        Width: =519
+                        X: =63
+                        Y: =402
+                  - DataCardKey15_53:
+                      Control: Label@2.5.1
+                      Properties:
+                        BorderColor: =RGBA(0, 0, 0, 1)
+                        Color: =RGBA(0, 18, 107, 1)
+                        Font: =Font.'Open Sans'
+                        Height: =50
+                        Text: ="Created By :"
+                        Width: =519
+                        Wrap: =false
+                        X: =63
+                        Y: =679
+                  - TextInput5_2:
+                      Control: Classic/TextInput@2.3.2
+                      Properties:
+                        BorderColor: =RGBA(0, 18, 107, 1)
+                        Default: =varLoggedInUser.Name
+                        DisplayMode: =DisplayMode.View
+                        Font: =Font.'Open Sans'
+                        HoverBorderColor: =RGBA(0, 18, 107, 1)
+                        HoverFill: =RGBA(186, 202, 226, 1)
+                        Width: =519
+                        X: =63
+                        Y: =729
+                  - DataCardKey15_54:
+                      Control: Label@2.5.1
+                      Properties:
+                        BorderColor: =RGBA(0, 0, 0, 1)
+                        Color: =RGBA(0, 18, 107, 1)
+                        Font: =Font.'Open Sans'
+                        Height: =50
+                        Text: ="Task ID :"
+                        Width: =519
+                        Wrap: =false
+                        X: =63
+                        Y: =827
+                  - TextInput5_3:
+                      Control: Classic/TextInput@2.3.2
+                      Properties:
+                        BorderColor: =RGBA(0, 18, 107, 1)
+                        Default: =Gallery1.Selected.TID
+                        DisplayMode: =DisplayMode.View
+                        Font: =Font.'Open Sans'
+                        HoverBorderColor: =RGBA(0, 18, 107, 1)
+                        HoverFill: =RGBA(186, 202, 226, 1)
+                        Width: =519
+                        X: =63
+                        Y: =877
+                  - DataCardKey15_55:
+                      Control: Label@2.5.1
+                      Properties:
+                        BorderColor: =RGBA(0, 0, 0, 1)
+                        Color: =RGBA(0, 18, 107, 1)
+                        Font: =Font.'Open Sans'
+                        Height: =50
+                        Text: ="Assigned To :"
+                        Width: =493
+                        Wrap: =false
+                        X: =89
+                        Y: =518
+                  - Label4_35:
+                      Control: Label@2.5.1
+                      Properties:
+                        BorderColor: =RGBA(0, 18, 107, 1)
+                        Color: =RGBA(255, 0, 0, 1)
+                        Font: =Font.'Open Sans'
+                        Height: =50
+                        Text: ="*"
+                        Width: =45
+                        X: =63
+                        Y: =520
+                  - ComboBox4_2:
+                      Control: Classic/ComboBox@2.4.0
+                      Properties:
+                        BorderColor: =RGBA(0, 18, 107, 1)
+                        ChevronBackground: =RGBA(56, 96, 178, 1)
+                        ChevronFill: =RGBA(255, 255, 255, 1)
+                        ChevronHoverBackground: =ColorFade(RGBA(56, 96, 178, 1), -20%)
+                        ChevronHoverFill: =RGBA(255, 255, 255, 1)
+                        DisplayFields: =["cr371_empid"]
+                        Font: =Font.'Open Sans'
+                        HoverFill: =RGBA(186, 202, 226, 1)
+                        IsSearchable: =false
+                        Items: "=\r\nIf(\r\n    ComboBox4_1.Selected.Value = \"Manager\",\r\n     ShowColumns(\r\n         Filter(TeamMembers, Name = varLoggedInUser.'Manager Name'),'Name'\r\n        \r\n    )\r\n   , // Table format to match ComboBox structure\r\n    ShowColumns(\r\n        Filter(TeamMembers, 'Manager Name' = varLoggedInUser.'Manager Name'), 'Name'\r\n    )\r\n)\r\n"
+                        OnChange: =
+                        PressedColor: =RGBA(255, 255, 255, 1)
+                        PressedFill: =RGBA(0, 18, 107, 1)
+                        SearchFields: =["cr371_empid"]
+                        SelectionColor: =RGBA(255, 255, 255, 1)
+                        SelectionFill: =RGBA(56, 96, 178, 1)
+                        Width: =519
+                        X: =63
+                        Y: =578
+      - Rectangle1_43:
+          Control: Rectangle@2.3.0
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Fill: =RGBA(9, 33, 98, 1)
+            Height: =88
+            Width: =640
+      - Label6_19:
+          Control: Label@2.5.1
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            Font: =Font.'Open Sans'
+            Height: =88
+            Size: =23
+            Text: ="Add A Comment"
+            Width: =305
+            X: =198
+      - Icon20_18:
+          Control: Classic/Icon@2.5.0
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            Icon: =Icon.ArrowLeft
+            OnSelect: =Navigate( 'Task Detail Screen',ScreenTransition.Fade)
+            X: =35
+            Y: =12
+      - Icon21_17:
+          Control: Classic/Icon@2.5.0
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            Icon: =Icon.More
+            X: =551
+            Y: =12
+      - Icon14_21:
+          Control: Classic/Icon@2.5.0
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(0, 18, 107, 1)
+            Height: =60
+            Icon: =Icon.Home
+            X: =35
+            Y: =1076
+      - Icon15_21:
+          Control: Classic/Icon@2.5.0
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(0, 18, 107, 1)
+            Height: =60
+            Icon: =Icon.Person
+            X: =551
+            Y: =1076
+      - Rectangle1_44:
+          Control: Rectangle@2.3.0
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Fill: =RGBA(219, 219, 219, 1)
+            Height: =4
+            Width: =640
+            Y: =1072
+      - Button7_1:
+          Control: Classic/Button@2.2.0
+          Properties:
+            BorderColor: =ColorFade(Self.Fill, -15%)
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            Fill: =RGBA(56, 96, 178, 1)
+            Font: =Font.'Open Sans'
+            HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =ColorFade(RGBA(56, 96, 178, 1), -20%)
+            OnSelect: "=Patch(Comments ,Defaults(Comments),{\r\n    'Comment Name':DataCardValue12_19.Text,\r\n    'Comment Description':DataCardValue12_20.Text,\r\n    'Assigned To': LookUp(TeamMembers, Name = ComboBox4_2.Selected.cr371_empid),\r\n    'Assigned By':LookUp(TeamMembers, Name = TextInput5_2.Text),\r\n    TaskID:LookUp(Tasks, TID = TextInput5_3.Text)\r\n    \r\n\r\n});\r\n\r\nReset(DataCardValue12_19);\r\nReset(DataCardValue12_20);\r\nReset(ComboBox4_2);\r\nNavigate('Task Detail Screen',ScreenTransition.CoverRight);"
+            PressedBorderColor: =Self.Fill
+            PressedColor: =Self.Fill
+            PressedFill: =Self.Color
+            X: =185
+            Y: =971

@@ -1,0 +1,148 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "cr371_project1s",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "cr371_project1",
+    "MaxGetRowsCount": 500,
+    "Name": "Projects",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "cr371_AssignedManager": "Assigned Manager",
+      "cr371_description": "Description",
+      "cr371_enddate": "End Date",
+      "cr371_priority": "Priority",
+      "cr371_project1_AsyncOperations": "System Jobs",
+      "cr371_project1_BulkDeleteFailures": "Bulk Delete Failures",
+      "cr371_project1_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "cr371_project1_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "cr371_project1_ProcessSession": "Process Sessions",
+      "cr371_project1_SyncErrors": "Sync Errors",
+      "cr371_project1id": "Project",
+      "cr371_projectassignmentss_ProjectId_cr371_project1": "ProjectAssignmentsses",
+      "cr371_projectid": "ProjectId",
+      "cr371_projectname": "Project Name",
+      "cr371_startdate": "Start Date",
+      "cr371_status": "Status (cr371_status)",
+      "cr371_task_ProjectId_cr371_project1": "Tasks",
+      "cr371_teammember_ProjectId_cr371_project1": "TeamMembers",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status (statecode)",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Projects",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Projects (Views)",
+    "Name": "_cr371_project1_views",
+    "RelatedEntityName": "Projects",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "0aeb5f98-7613-4679-9135-05d4631ed505": "Active Projects",
+      "41bdf9cc-62a5-42ea-9935-5e9c6a5020dd": "Inactive Projects",
+      "9bb5b85d-ef15-4e55-add0-257576266cc4": "Project Associated View",
+      "be871ee8-79ed-4478-9f06-dfa694409e83": "Project Lookup View",
+      "d65b74da-a16c-42a5-a987-6ae26cb9adca": "Project Advanced Find View"
+    }
+  },
+  {
+    "DisplayName": "Priority (Projects)",
+    "Name": "cr371_project1_cr371_priority",
+    "OptionSetInfoNameMapping": {
+      "852020000": "High",
+      "852020001": "Medium",
+      "852020002": "Low"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "cr371_priority",
+        "OptionSetReferenceEntityName": "Projects"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "cr371_priority",
+    "RelatedEntityName": "Projects",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status (Projects)",
+    "Name": "cr371_project1_cr371_status",
+    "OptionSetInfoNameMapping": {
+      "852020000": "Not Assigned",
+      "852020001": "Completed",
+      "852020002": "In progress",
+      "852020003": "Assigned"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "cr371_status",
+        "OptionSetReferenceEntityName": "Projects"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "cr371_status",
+    "RelatedEntityName": "Projects",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status (Projects)_1",
+    "Name": "cr371_project1_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Projects"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Projects",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Projects)",
+    "Name": "cr371_project1_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Projects"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Projects",
+    "Type": "OptionSetInfo"
+  }
+]

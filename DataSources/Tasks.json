@@ -1,0 +1,148 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "cr371_tasks",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "cr371_task",
+    "MaxGetRowsCount": 500,
+    "Name": "Tasks",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "cr371_AssignedTo": "AssignedTo",
+      "cr371_comments_TaskID_cr371_task": "Comments",
+      "cr371_deadline": "Deadline",
+      "cr371_description": "Description",
+      "cr371_originalestimation": "Original Estimation",
+      "cr371_priority": "Priority",
+      "cr371_ProjectId": "ProjectId",
+      "cr371_status": "Status (cr371_status)",
+      "cr371_task_AsyncOperations": "System Jobs",
+      "cr371_task_BulkDeleteFailures": "Bulk Delete Failures",
+      "cr371_task_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "cr371_task_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "cr371_task_ProcessSession": "Process Sessions",
+      "cr371_task_SyncErrors": "Sync Errors",
+      "cr371_taskid": "Task",
+      "cr371_teammember_TaskID_cr371_task": "TeamMembers",
+      "cr371_tid": "TID",
+      "cr371_time": "Time",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status (statecode)",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Tasks",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Tasks (Views)",
+    "Name": "_cr371_task_views",
+    "RelatedEntityName": "Tasks",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "0241f0a7-636e-4e93-aaba-0310b5872379": "Inactive Tasks",
+      "4b599025-df2e-4f86-b214-ac3c51091987": "Active Tasks",
+      "5c774c4b-6dd7-44ab-80e6-1a59ee3864d5": "Task Associated View",
+      "6f64b6d3-c2d9-45cc-a50c-2a35b3032f1f": "Task Lookup View",
+      "ec1391ac-fe3b-437b-a0f2-dd80e0f779f8": "Task Advanced Find View"
+    }
+  },
+  {
+    "DisplayName": "Priority (Tasks)",
+    "Name": "cr371_task_cr371_priority",
+    "OptionSetInfoNameMapping": {
+      "852020000": "High",
+      "852020001": "Medium",
+      "852020002": "Low"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "cr371_priority",
+        "OptionSetReferenceEntityName": "Tasks"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "cr371_priority",
+    "RelatedEntityName": "Tasks",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status (Tasks)",
+    "Name": "cr371_task_cr371_status",
+    "OptionSetInfoNameMapping": {
+      "852020000": "Not Assigned",
+      "852020001": "In progress",
+      "852020002": "Completed",
+      "852020003": "Assigned"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "cr371_status",
+        "OptionSetReferenceEntityName": "Tasks"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "cr371_status",
+    "RelatedEntityName": "Tasks",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status (Tasks)_1",
+    "Name": "cr371_task_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Tasks"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Tasks",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Tasks)",
+    "Name": "cr371_task_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Tasks"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Tasks",
+    "Type": "OptionSetInfo"
+  }
+]

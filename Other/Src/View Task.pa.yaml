@@ -1,0 +1,369 @@
+# ************************************************************************************************
+# Warning: YAML source code for Canvas Apps is in preview. The schema is being actively developed.
+# Content may be incomplete and subject to change.
+# This file is read-only and should only be used to review changes made within Power Apps Studio.
+# This file isn't used when loading the app. External editing, merging and conflict resolution are
+# not supported.
+# 
+# For more information, visit https://go.microsoft.com/fwlink/?linkid=2292623
+# ************************************************************************************************
+Screens:
+  View Task:
+    Properties:
+      LoadingSpinnerColor: =RGBA(56, 96, 178, 1)
+    Children:
+      - Label1_10:
+          Control: Label@2.5.1
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Bold
+            Size: =25
+            Text: =LookUp(Projects,ProjectId=Gallery7.Selected.ProjectId.ProjectId,'Project Name')
+            Width: =380
+            X: =35
+            Y: =142
+      - Label5_3:
+          Control: Label@2.5.1
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Font: =Font.'Open Sans'
+            Height: =89
+            LineHeight: =1.5
+            Size: =23
+            Text: |-
+              = "Assigned To : "& Gallery7.Selected.AssignedTo.Name
+            Width: =600
+            X: =35
+            Y: =199
+      - Icon7_5:
+          Control: Classic/Icon@2.5.0
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(255, 0, 0, 1)
+            Height: =60
+            Icon: =Icon.CalendarBlank
+            Width: =60
+            X: =48
+            Y: =362
+      - Label9_6:
+          Control: Label@2.5.1
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Font: =Font.'Open Sans'
+            Height: =60
+            Text: |+
+              =//Gallery6.Selected.'End Date'
+              DateValue(Gallery7.Selected.Deadline)
+            Width: =171
+            X: =145
+            Y: =362
+      - Icon9_4:
+          Control: Classic/Icon@2.5.0
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: |+
+              =If(
+                  Gallery1.Selected.Priority = 852020000, RGBA(255, 0, 0, 1),   
+                  Gallery1.Selected.Priority = 852020001, RGBA(0, 255, 0, 1),   
+                  Gallery1.Selected.Priority = 852020002, RGBA(255, 255, 0, 1),
+                  RGBA(0, 0, 0, 0) 
+              )
+            Height: =60
+            Icon: =Icon.Flag
+            Width: =60
+            X: =372
+            Y: =362
+      - Label10_4:
+          Control: Label@2.5.1
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Font: =Font.'Open Sans'
+            Height: =60
+            Text: =Gallery1.Selected.Priority
+            Width: =141
+            X: =460
+            Y: =358
+      - Label13_1:
+          Control: Label@2.5.1
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Semibold
+            Height: =47
+            Size: =23
+            Text: ="Status :"
+            Width: =127
+            X: =35
+            Y: =456
+      - Label14_1:
+          Control: Label@2.5.1
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Font: =Font.'Open Sans'
+            Height: =47
+            Size: =23
+            Text: =Gallery7.Selected.'Status (cr371_status)'
+            Width: =300
+            X: =163
+            Y: =456
+      - Rectangle1_37:
+          Control: Rectangle@2.3.0
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Fill: =RGBA(9, 33, 98, 1)
+            Height: =88
+            Width: =640
+      - Label6_16:
+          Control: Label@2.5.1
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            Font: =Font.'Open Sans'
+            Height: =88
+            Size: =23
+            Text: ="View Tasks"
+            Width: =181
+            X: =236
+      - Icon20_15:
+          Control: Classic/Icon@2.5.0
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            Icon: =Icon.ArrowLeft
+            OnSelect: =Navigate('View all Assigned Tasks',ScreenTransition.Fade)
+            X: =35
+            Y: =12
+      - Icon21_14:
+          Control: Classic/Icon@2.5.0
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            Icon: =Icon.More
+            X: =551
+            Y: =12
+      - Icon14_18:
+          Control: Classic/Icon@2.5.0
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(0, 18, 107, 1)
+            Height: =60
+            Icon: =Icon.Home
+            X: =35
+            Y: =1064
+      - Icon15_18:
+          Control: Classic/Icon@2.5.0
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(0, 18, 107, 1)
+            Height: =60
+            Icon: =Icon.Person
+            X: =551
+            Y: =1064
+      - Rectangle1_38:
+          Control: Rectangle@2.3.0
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Fill: =RGBA(237, 237, 237, 1)
+            Height: =4
+            Width: =640
+            Y: =1048
+      - Icon40_1:
+          Control: Classic/Icon@2.5.0
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(0, 18, 107, 1)
+            Height: =60
+            Icon: =Icon.Add
+            OnSelect: =Navigate('Assign Task to Teammembers',ScreenTransition.UnCover)
+            X: =284
+            Y: =1064
+      - Icon9_5:
+          Control: Classic/Icon@2.5.0
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: |+
+              =If(
+                  Gallery7.Selected.Priority = 852020000, RGBA(255, 0, 0, 1),   
+                  Gallery7.Selected.Priority = 852020001, RGBA(0, 255, 0, 1),   
+                  Gallery7.Selected.Priority = 852020002, RGBA(255, 255, 0, 1),
+                  RGBA(0, 0, 0, 0) 
+              )
+            Height: =60
+            Icon: =Icon.Flag
+            Width: =60
+            X: =384
+            Y: =362
+      - Label10_5:
+          Control: Label@2.5.1
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Font: =Font.'Open Sans'
+            Height: =60
+            Text: =Gallery7.Selected.Priority
+            Width: =141
+            X: =464
+            Y: =358
+      - Icon42_2:
+          Control: Classic/Icon@2.5.0
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(246, 88, 16, 1)
+            Height: =60
+            Icon: =Icon.Edit
+            OnSelect: =Navigate('Edit Task',ScreenTransition.Fade)
+            Width: =60
+            X: =555
+            Y: =117
+      - Label11_8:
+          Control: Label@2.5.1
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Semibold
+            Height: =42
+            Size: =23
+            Text: ="Original Estimation :"
+            Width: =324
+            X: =35
+            Y: =522
+      - TextInput3_2:
+          Control: Classic/TextInput@2.3.2
+          Properties:
+            BorderColor: =RGBA(237, 237, 237, 1)
+            BorderThickness: =0
+            Default: =If(!IsBlank(LookUp( Tasks,TID=Gallery7.Selected.TID,Time)),LookUp( Tasks,TID=Gallery7.Selected.TID,Time) , "")
+            DisplayMode: =DisplayMode.View
+            Font: =Font.'Open Sans'
+            Height: =42
+            HintText: ="Hr"
+            HoverBorderColor: =RGBA(0, 18, 107, 1)
+            HoverFill: =RGBA(186, 202, 226, 1)
+            OnChange: =
+            Width: =119
+            X: =366
+            Y: =522
+      - Label11_7:
+          Control: Label@2.5.1
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(184, 0, 0, 1)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Semibold
+            Height: =42
+            Size: =23
+            Text: ="Comments :"
+            Width: =196
+            X: =35
+            Y: =591
+      - Icon38_1:
+          Control: Classic/Icon@2.5.0
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(0, 18, 107, 1)
+            Height: =42
+            Icon: =Icon.Add
+            OnSelect: =Navigate('Comment Form Screen for manager',ScreenTransition.UnCover)
+            X: =551
+            Y: =591
+      - Gallery10:
+          Control: Gallery@2.15.0
+          Variant: BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Height: =383
+            Items: |-
+              =//Comments
+              Filter(Comments, TaskID.TID= Gallery7.Selected.TID && 'Assigned To'.Name=varLoggedInUser.Name)
+            TemplateSize: =116
+            Width: =580
+            X: =35
+            Y: =645
+          Children:
+            - Title9:
+                Control: Label@2.5.1
+                Properties:
+                  BorderColor: =RGBA(0, 0, 0, 1)
+                  Color: =RGBA(50, 49, 48, 1)
+                  Font: =Font.'Open Sans'
+                  FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                  Height: =Self.Size * 1.8
+                  OnSelect: =Select(Parent)
+                  PaddingBottom: =0
+                  PaddingLeft: =0
+                  PaddingRight: =0
+                  PaddingTop: =0
+                  Text: =ThisItem.'Comment Name'
+                  VerticalAlign: =VerticalAlign.Top
+                  Width: =Parent.TemplateWidth - 173
+                  X: =20
+                  Y: =15
+            - Subtitle9:
+                Control: Label@2.5.1
+                Properties:
+                  BorderColor: =RGBA(0, 0, 0, 1)
+                  Font: =Font.'Open Sans'
+                  FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                  Height: =36
+                  OnSelect: =Select(Parent)
+                  PaddingBottom: =0
+                  PaddingLeft: =0
+                  PaddingRight: =0
+                  PaddingTop: =0
+                  Size: =20
+                  Text: |-
+                    ="Description : " & ThisItem.'Comment Description'
+                  VerticalAlign: =VerticalAlign.Top
+                  Width: =478
+                  X: =Title9.X
+                  Y: =58
+            - NextArrow1:
+                Control: Classic/Icon@2.5.0
+                Properties:
+                  AccessibleLabel: =Self.Tooltip
+                  BorderColor: =RGBA(0, 0, 0, 1)
+                  Color: =RGBA(166, 166, 166, 1)
+                  DisabledBorderColor: =RGBA(56, 56, 56, 1)
+                  DisabledColor: =RGBA(119, 119, 119, 1)
+                  Height: =50
+                  Icon: =Icon.ChevronRight
+                  OnSelect: =Select(Parent)
+                  PaddingBottom: =16
+                  PaddingLeft: =16
+                  PaddingRight: =16
+                  PaddingTop: =16
+                  Tooltip: ="View item details"
+                  Width: =50
+                  X: =Parent.TemplateWidth - Self.Width - 12
+                  Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
+            - Separator10:
+                Control: Rectangle@2.3.0
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Fill: =RGBA(255, 255, 255, 1)
+                  Height: =8
+                  OnSelect: =Select(Parent)
+                  Width: =Parent.TemplateWidth
+                  Y: =Parent.TemplateHeight - Self.Height
+            - Rectangle12:
+                Control: Rectangle@2.3.0
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Fill: =RGBA(0, 18, 107, 1)
+                  Height: =Parent.TemplateHeight - Separator10.Height
+                  OnSelect: =Select(Parent)
+                  Visible: =ThisItem.IsSelected
+                  Width: =4
+      - Label5_4:
+          Control: Label@2.5.1
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Font: =Font.'Open Sans'
+            Height: =89
+            LineHeight: =1.5
+            Size: =23
+            Text: |-
+              = "Task Description : "& Gallery7.Selected.Description
+            Width: =600
+            X: =35
+            Y: =262

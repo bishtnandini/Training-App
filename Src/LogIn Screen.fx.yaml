@@ -1,0 +1,179 @@
+"'LogIn Screen' As screen":
+    Fill: =RGBA(241, 244, 249, 1)
+    OnVisible: |
+        =Set(lblxt,false);
+        UpdateContext({var_pass:false})
+
+    Image7 As image:
+        Height: =377
+        Image: =namaste
+        Width: =447
+        X: =104
+        Y: =86
+        ZIndex: =1
+
+    Label3_1 As label:
+        Height: =60
+        Size: =21
+        Text: |-
+            ="Password :"
+        Width: =276
+        X: =94
+        Y: =647
+        ZIndex: =2
+
+    Label4_1 As label:
+        Color: =RGBA(255, 0, 0, 1)
+        Height: =50
+        Size: =21
+        Text: ="*"
+        Width: =45
+        X: =68
+        Y: =657
+        ZIndex: =3
+
+    TextInput4_1 As text:
+        BorderColor: =RGBA(149, 149, 149, 1)
+        Default: =
+        Height: =70
+        Mode: =If(var_pass,TextMode.SingleLine,TextMode.Password)
+        RadiusBottomLeft: =11
+        RadiusBottomRight: =11
+        RadiusTopLeft: =11
+        RadiusTopRight: =11
+        Size: =21
+        Width: =518
+        X: =68
+        Y: =707
+        ZIndex: =4
+
+    Icon18 As icon.View:
+        Height: =42
+        Icon: =If(var_pass,Icon.Hide,Icon.View)
+        OnSelect: |-
+            =UpdateContext({var_pass:!var_pass})
+        Width: =43
+        X: =530
+        Y: =721
+        ZIndex: =5
+
+    Label2 As label:
+        Color: =RGBA(255, 0, 0, 1)
+        Height: =70
+        Size: =20
+        Text: ="Inncorect Email or Password"
+        Visible: =lblxt
+        Width: =392
+        X: =138
+        Y: =791
+        ZIndex: =6
+
+    Button2 As button:
+        BorderColor: |-
+            =//ColorFade(Self.Fill, -15%)
+            Color.White
+        DisplayMode: |-
+            =If(
+                IsBlank(TextInput4.Text) || IsBlank(TextInput4_1.Text),
+                DisplayMode.Disabled,
+                DisplayMode.Edit
+            )
+        Fill: =RGBA(9, 33, 98, 1)
+        Height: =70
+        OnSelect: |
+            =Set(
+                varLoggedInUser,
+                LookUp(
+                    TeamMembers,
+                    Email = TextInput4.Text && Password = TextInput4_1.Text
+                )
+            );
+            Set(
+                UserRole,
+                varLoggedInUser.Role
+            );
+            
+            Set(
+                UserProjectId,
+                LookUp(
+                    ProjectAssignmentsses,
+                    Name.Name = varLoggedInUser.Name,ProjectId.ProjectId
+                )
+                
+            );
+            
+            
+            If(
+                IsBlankOrError(varLoggedInUser),
+                Notify("Incorrect Email Or Password");
+                Set(
+                    lblxt,
+                    true
+                ),
+                Switch(
+                    UserRole,
+                    "Manager",
+                    Navigate(
+                        'Manager Dashboard',
+                        ScreenTransition.CoverRight
+                    ),
+                    "Admin",
+                    Navigate(
+                        'Admin Dashboard',
+                        ScreenTransition.UnCover
+                    ),
+                    "Employee",
+                    Navigate('Employee Dashboard')
+                )
+            );
+            Reset(TextInput4);
+            Reset(TextInput4_1);
+        Size: =24
+        Text: ="LogIn"
+        Width: =518
+        X: =68
+        Y: =875
+        ZIndex: =7
+
+    Label3 As label:
+        Height: =60
+        Size: =21
+        Text: |-
+            ="Email :"
+        Width: =276
+        X: =94
+        Y: =482
+        ZIndex: =9
+
+    Label4 As label:
+        Color: =RGBA(255, 0, 0, 1)
+        Height: =50
+        Size: =21
+        Text: ="*"
+        Width: =45
+        X: =68
+        Y: =492
+        ZIndex: =10
+
+    TextInput4 As text:
+        BorderColor: =RGBA(149, 149, 149, 1)
+        Default: =
+        Height: =70
+        RadiusBottomLeft: =11
+        RadiusBottomRight: =11
+        RadiusTopLeft: =11
+        RadiusTopRight: =11
+        Size: =21
+        Width: =518
+        X: =68
+        Y: =542
+        ZIndex: =11
+
+    Icon10 As icon.Mail:
+        Height: =42
+        Icon: =Icon.Mail
+        Width: =43
+        X: =530
+        Y: =556
+        ZIndex: =12
+

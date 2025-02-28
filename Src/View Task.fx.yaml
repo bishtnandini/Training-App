@@ -1,0 +1,317 @@
+"'View Task' As screen":
+
+    Label1_10 As label:
+        FontWeight: =FontWeight.Bold
+        Height: =70
+        Size: =25
+        Text: =LookUp(Projects,ProjectId=Gallery7.Selected.ProjectId.ProjectId,'Project Name')
+        Width: =380
+        X: =35
+        Y: =142
+        ZIndex: =1
+
+    Label5_3 As label:
+        Height: =89
+        LineHeight: =1.5
+        Size: =23
+        Text: |-
+            = "Assigned To : "& Gallery7.Selected.AssignedTo.Name
+        Width: =600
+        X: =35
+        Y: =199
+        ZIndex: =2
+
+    Icon7_5 As icon.CalendarBlank:
+        Color: =RGBA(255, 0, 0, 1)
+        Height: =60
+        Icon: =Icon.CalendarBlank
+        Width: =60
+        X: =48
+        Y: =362
+        ZIndex: =3
+
+    Label9_6 As label:
+        Height: =60
+        Size: =21
+        Text: |
+            =//Gallery6.Selected.'End Date'
+            DateValue(Gallery7.Selected.Deadline)
+        Width: =171
+        X: =145
+        Y: =362
+        ZIndex: =4
+
+    Icon9_4 As icon.Flag:
+        Color: |
+            =If(
+                Gallery1.Selected.Priority = 852020000, RGBA(255, 0, 0, 1),   
+                Gallery1.Selected.Priority = 852020001, RGBA(0, 255, 0, 1),   
+                Gallery1.Selected.Priority = 852020002, RGBA(255, 255, 0, 1),
+                RGBA(0, 0, 0, 0) 
+            )
+        Height: =60
+        Icon: =Icon.Flag
+        Width: =60
+        X: =372
+        Y: =362
+        ZIndex: =5
+
+    Label10_4 As label:
+        Height: =60
+        Size: =21
+        Text: =Gallery1.Selected.Priority
+        Width: =141
+        X: =460
+        Y: =358
+        ZIndex: =6
+
+    Label13_1 As label:
+        FontWeight: =FontWeight.Semibold
+        Height: =47
+        Size: =23
+        Text: |-
+            ="Status :"
+        Width: =127
+        X: =35
+        Y: =456
+        ZIndex: =8
+
+    Label14_1 As label:
+        Height: =47
+        Size: =23
+        Text: =Gallery7.Selected.'Status (cr371_status)'
+        Width: =300
+        X: =163
+        Y: =456
+        ZIndex: =9
+
+    Rectangle1_37 As rectangle:
+        Fill: =RGBA(9, 33, 98, 1)
+        Height: =88
+        Width: =640
+        ZIndex: =10
+
+    Label6_16 As label:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =88
+        Size: =23
+        Text: ="View Tasks"
+        Width: =181
+        X: =236
+        ZIndex: =11
+
+    Icon20_15 As icon.ArrowLeft:
+        Color: =RGBA(255, 255, 255, 1)
+        Icon: =Icon.ArrowLeft
+        OnSelect: =Navigate('View all Assigned Tasks',ScreenTransition.Fade)
+        X: =35
+        Y: =12
+        ZIndex: =12
+
+    Icon21_14 As icon.More:
+        Color: =RGBA(255, 255, 255, 1)
+        Icon: =Icon.More
+        X: =551
+        Y: =12
+        ZIndex: =13
+
+    Icon14_18 As icon.Home:
+        Height: =60
+        Icon: =Icon.Home
+        X: =35
+        Y: =1064
+        ZIndex: =14
+
+    Icon15_18 As icon.Person:
+        Height: =60
+        Icon: =Icon.Person
+        X: =551
+        Y: =1064
+        ZIndex: =15
+
+    Rectangle1_38 As rectangle:
+        Fill: =RGBA(237, 237, 237, 1)
+        Height: =4
+        Width: =640
+        Y: =1048
+        ZIndex: =16
+
+    Icon40_1 As icon.Add:
+        Height: =60
+        Icon: =Icon.Add
+        OnSelect: =Navigate('Assign Task to Teammembers',ScreenTransition.UnCover)
+        X: =284
+        Y: =1064
+        ZIndex: =17
+
+    Icon9_5 As icon.Flag:
+        Color: |
+            =If(
+                Gallery7.Selected.Priority = 852020000, RGBA(255, 0, 0, 1),   
+                Gallery7.Selected.Priority = 852020001, RGBA(0, 255, 0, 1),   
+                Gallery7.Selected.Priority = 852020002, RGBA(255, 255, 0, 1),
+                RGBA(0, 0, 0, 0) 
+            )
+        Height: =60
+        Icon: =Icon.Flag
+        Width: =60
+        X: =384
+        Y: =362
+        ZIndex: =18
+
+    Label10_5 As label:
+        Height: =60
+        Size: =21
+        Text: =Gallery7.Selected.Priority
+        Width: =141
+        X: =464
+        Y: =358
+        ZIndex: =19
+
+    Icon42_2 As icon.Edit:
+        Color: =RGBA(246, 88, 16, 1)
+        Height: =60
+        Icon: =Icon.Edit
+        OnSelect: =Navigate('Edit Task',ScreenTransition.Fade)
+        Width: =60
+        X: =555
+        Y: =117
+        ZIndex: =20
+
+    Label11_8 As label:
+        FontWeight: =FontWeight.Semibold
+        Height: =42
+        Size: =23
+        Text: |-
+            ="Original Estimation :"
+        Width: =324
+        X: =35
+        Y: =522
+        ZIndex: =22
+
+    TextInput3_2 As text:
+        BorderColor: =RGBA(237, 237, 237, 1)
+        BorderThickness: =0
+        Default: =If(!IsBlank(LookUp( Tasks,TID=Gallery7.Selected.TID,Time)),LookUp( Tasks,TID=Gallery7.Selected.TID,Time) , "")
+        DisplayMode: =DisplayMode.View
+        Height: =42
+        HintText: ="Hr"
+        OnChange: =
+        Size: =21
+        Width: =119
+        X: =366
+        Y: =522
+        ZIndex: =23
+
+    Label11_7 As label:
+        Color: =RGBA(184, 0, 0, 1)
+        FontWeight: =FontWeight.Semibold
+        Height: =42
+        Size: =23
+        Text: |-
+            ="Comments :"
+        Width: =196
+        X: =35
+        Y: =591
+        ZIndex: =24
+
+    Icon38_1 As icon.Add:
+        Height: =42
+        Icon: =Icon.Add
+        OnSelect: =Navigate('Comment Form Screen for manager',ScreenTransition.UnCover)
+        X: =551
+        Y: =591
+        ZIndex: =25
+
+    "Gallery10 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+        DelayItemLoading: =true
+        Height: =383
+        Items: |-
+            =//Comments
+            Filter(Comments, TaskID.TID= Gallery7.Selected.TID && 'Assigned To'.Name=varLoggedInUser.Name)
+        Layout: =Layout.Vertical
+        LoadingSpinner: =LoadingSpinner.Data
+        TemplatePadding: =0
+        TemplateSize: =116
+        Width: =580
+        X: =35
+        Y: =645
+        ZIndex: =26
+
+        Title9 As label:
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+            Height: =Self.Size * 1.8
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =21
+            Text: =ThisItem.'Comment Name'
+            VerticalAlign: =VerticalAlign.Top
+            Width: =Parent.TemplateWidth - 173
+            X: =20
+            Y: =15
+            ZIndex: =2
+
+        Subtitle9 As label:
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+            Height: =36
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =20
+            Text: |-
+                ="Description : " & ThisItem.'Comment Description'
+            VerticalAlign: =VerticalAlign.Top
+            Width: =478
+            X: =Title9.X
+            Y: =58
+            ZIndex: =3
+
+        NextArrow1 As icon.ChevronRight:
+            AccessibleLabel: =Self.Tooltip
+            BorderColor: =RGBA(0, 0, 0, 1)
+            Color: =RGBA(166, 166, 166, 1)
+            DisabledBorderColor: =RGBA(56, 56, 56, 1)
+            DisabledColor: =RGBA(119, 119, 119, 1)
+            Height: =50
+            Icon: =Icon.ChevronRight
+            OnSelect: =Select(Parent)
+            PaddingBottom: =16
+            PaddingLeft: =16
+            PaddingRight: =16
+            PaddingTop: =16
+            Tooltip: ="View item details"
+            Width: =50
+            X: =Parent.TemplateWidth - Self.Width - 12
+            Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
+            ZIndex: =4
+
+        Separator10 As rectangle:
+            Height: =8
+            OnSelect: =Select(Parent)
+            Width: =Parent.TemplateWidth
+            Y: =Parent.TemplateHeight - Self.Height
+            ZIndex: =5
+
+        Rectangle12 As rectangle:
+            Height: =Parent.TemplateHeight - Separator10.Height
+            OnSelect: =Select(Parent)
+            Visible: =ThisItem.IsSelected
+            Width: =4
+            ZIndex: =6
+
+    Label5_4 As label:
+        Height: =89
+        LineHeight: =1.5
+        Size: =23
+        Text: |-
+            = "Task Description : "& Gallery7.Selected.Description
+        Width: =600
+        X: =35
+        Y: =262
+        ZIndex: =27
+

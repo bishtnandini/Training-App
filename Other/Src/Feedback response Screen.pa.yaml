@@ -1,0 +1,255 @@
+# ************************************************************************************************
+# Warning: YAML source code for Canvas Apps is in preview. The schema is being actively developed.
+# Content may be incomplete and subject to change.
+# This file is read-only and should only be used to review changes made within Power Apps Studio.
+# This file isn't used when loading the app. External editing, merging and conflict resolution are
+# not supported.
+# 
+# For more information, visit https://go.microsoft.com/fwlink/?linkid=2292623
+# ************************************************************************************************
+Screens:
+  Feedback response Screen:
+    Properties:
+      LoadingSpinnerColor: =RGBA(56, 96, 178, 1)
+    Children:
+      - Icon14_11:
+          Control: Classic/Icon@2.5.0
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(0, 18, 107, 1)
+            Height: =60
+            Icon: =Icon.Home
+            X: =35
+            Y: =1065
+      - Icon15_11:
+          Control: Classic/Icon@2.5.0
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(0, 18, 107, 1)
+            Height: =60
+            Icon: =Icon.Person
+            X: =551
+            Y: =1065
+      - Rectangle1_23:
+          Control: Rectangle@2.3.0
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Fill: =RGBA(219, 219, 219, 1)
+            Height: =4
+            Width: =640
+            Y: =1049
+      - Icon4_4:
+          Control: Classic/Icon@2.5.0
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(9, 33, 98, 1)
+            Icon: =Icon.Search
+            X: =35
+            Y: =111
+      - TextInput2_4:
+          Control: Classic/TextInput@2.3.2
+          Properties:
+            BorderColor: =RGBA(219, 219, 219, 1)
+            Default: =
+            Font: =Font.'Open Sans'
+            Height: =64
+            HintText: ="Department"
+            HoverBorderColor: =RGBA(0, 18, 107, 1)
+            HoverFill: =RGBA(186, 202, 226, 1)
+            RadiusBottomLeft: =15
+            RadiusBottomRight: =15
+            RadiusTopLeft: =15
+            RadiusTopRight: =15
+            Width: =415
+            X: =117
+            Y: =110
+      - Rectangle1_24:
+          Control: Rectangle@2.3.0
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Fill: =RGBA(9, 33, 98, 1)
+            Height: =88
+            Width: =640
+      - Label6_10:
+          Control: Label@2.5.1
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            Font: =Font.'Open Sans'
+            Height: =73
+            Size: =23
+            Text: ="Feedback Response"
+            Width: =311
+            X: =190
+            Y: =7
+      - Icon20_8:
+          Control: Classic/Icon@2.5.0
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            Icon: =Icon.ArrowLeft
+            OnSelect: =Navigate('Admin Dashboard',ScreenTransition.UnCover)
+            X: =35
+            Y: =12
+      - Icon21_7:
+          Control: Classic/Icon@2.5.0
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            Icon: =Icon.More
+            X: =551
+            Y: =11
+      - Gallery5:
+          Control: Gallery@2.15.0
+          Variant: BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Items: =Search( FeedBacks,TextInput2_4.Text, Department )
+            TemplateSize: =174
+            Width: =580
+            X: =35
+            Y: =197
+          Children:
+            - Title5:
+                Control: Label@2.5.1
+                Properties:
+                  BorderColor: =RGBA(0, 0, 0, 1)
+                  Color: =RGBA(50, 49, 48, 1)
+                  Font: =Font.'Open Sans'
+                  FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Semibold)
+                  Height: =Self.Size * 1.8
+                  OnSelect: =Select(Parent)
+                  PaddingBottom: =0
+                  PaddingLeft: =0
+                  PaddingRight: =0
+                  PaddingTop: =0
+                  Size: =23
+                  Text: =ThisItem.'Issue Name'
+                  VerticalAlign: =VerticalAlign.Top
+                  Width: =Parent.TemplateWidth - 173
+                  X: =32
+                  Y: =15
+            - Subtitle4:
+                Control: Label@2.5.1
+                Properties:
+                  BorderColor: =RGBA(0, 0, 0, 1)
+                  Font: =Font.'Open Sans'
+                  FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                  Height: =Self.Size * 1.8
+                  OnSelect: =Select(Parent)
+                  PaddingBottom: =0
+                  PaddingLeft: =0
+                  PaddingRight: =0
+                  PaddingTop: =0
+                  Size: =20
+                  Text: |-
+                    ="Description : " & ThisItem.Description
+                  VerticalAlign: =VerticalAlign.Top
+                  Width: =Title5.Width
+                  X: =Title5.X
+                  Y: =63
+            - Separator4:
+                Control: Rectangle@2.3.0
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Fill: =RGBA(255, 255, 255, 1)
+                  Height: =8
+                  OnSelect: =Select(Parent)
+                  Width: =Parent.TemplateWidth
+                  Y: =Parent.TemplateHeight - Self.Height
+            - Rectangle8:
+                Control: Rectangle@2.3.0
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Fill: =RGBA(0, 18, 107, 1)
+                  Height: =Parent.TemplateHeight - Separator4.Height
+                  OnSelect: =Select(Parent)
+                  Visible: =ThisItem.IsSelected
+                  Width: =4
+            - Subtitle4_1:
+                Control: Label@2.5.1
+                Properties:
+                  BorderColor: =RGBA(0, 0, 0, 1)
+                  Font: =Font.'Open Sans'
+                  FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                  Height: =36
+                  OnSelect: =Select(Parent)
+                  PaddingBottom: =0
+                  PaddingLeft: =0
+                  PaddingRight: =0
+                  PaddingTop: =0
+                  Size: =20
+                  Text: =ThisItem.Department
+                  VerticalAlign: =VerticalAlign.Top
+                  Width: =182
+                  X: =103
+                  Y: =119
+            - Icon34:
+                Control: Classic/Icon@2.5.0
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Color: =RGBA(0, 18, 107, 1)
+                  Height: =54
+                  Icon: =Icon.Post
+                  OnSelect: =Select(Parent)
+                  Width: =53
+                  X: =32
+                  Y: =110
+            - Icon35:
+                Control: Classic/Icon@2.5.0
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Color: =If(Icon.Export , RGBA(178, 222, 39,1),RGBA(246, 88, 16, 1))
+                  Height: =54
+                  Icon: |-
+                    =//Icon.Export
+
+                    If(
+                        !IsBlank(ThisItem.AssignedTo.Name),  // Check if the Name field inside the 'Assigned To' Lookup is not blank
+                    Icon.CheckBadge,  // Show cancel icon if assigned
+                        Icon.Export  // Show export icon if not assigned
+                    )
+                  OnSelect: |-
+                    =Patch(
+                        FeedBacks,
+                        LookUp(
+                            FeedBacks,
+                            'Issue Name' = Gallery5.Selected.'Issue Name'
+                        ),
+                        {
+                            AssignedTo: LookUp(
+                                TeamMembers,
+                                Department = Text(Gallery5.Selected.Dep) && Role = "Manager"
+                            )
+                        }
+                    );
+                    Notify(
+                        "The feedback has been successfully sent to the manager",
+                        NotificationType.Success
+                    );
+                    /*Patch(
+                        TeamMembers,
+                        LookUp(
+                            TeamMembers,
+                            Department = Gallery5.Selected.Department && Role="Manager"
+                        ),
+                        {
+                            'Feedback Assigned To ID': LookUp(
+                                FeedBacks,
+                                FBID = Gallery5.Selected.FBID
+                            )
+                        }
+                    );*/
+                  Width: =53
+                  X: =511
+                  Y: =61
+      - Icon19_5:
+          Control: Classic/Icon@2.5.0
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(0, 18, 107, 1)
+            Icon: =Icon.Filter
+            OnSelect: |+
+              =UpdateContext({ varToggle: !varToggle })
+            X: =551
+            Y: =111

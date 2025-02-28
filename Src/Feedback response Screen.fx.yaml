@@ -1,0 +1,215 @@
+"'Feedback response Screen' As screen":
+
+    Icon14_11 As icon.Home:
+        Height: =60
+        Icon: =Icon.Home
+        X: =35
+        Y: =1065
+        ZIndex: =1
+
+    Icon15_11 As icon.Person:
+        Height: =60
+        Icon: =Icon.Person
+        X: =551
+        Y: =1065
+        ZIndex: =2
+
+    Rectangle1_23 As rectangle:
+        Fill: =RGBA(219, 219, 219, 1)
+        Height: =4
+        Width: =640
+        Y: =1049
+        ZIndex: =3
+
+    Icon4_4 As icon.Search:
+        Color: =RGBA(9, 33, 98, 1)
+        Icon: =Icon.Search
+        X: =35
+        Y: =111
+        ZIndex: =4
+
+    TextInput2_4 As text:
+        BorderColor: =RGBA(219, 219, 219, 1)
+        Default: =
+        Height: =64
+        HintText: ="Department"
+        RadiusBottomLeft: =15
+        RadiusBottomRight: =15
+        RadiusTopLeft: =15
+        RadiusTopRight: =15
+        Size: =21
+        Width: =415
+        X: =117
+        Y: =110
+        ZIndex: =5
+
+    Rectangle1_24 As rectangle:
+        Fill: =RGBA(9, 33, 98, 1)
+        Height: =88
+        Width: =640
+        ZIndex: =6
+
+    Label6_10 As label:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =73
+        Size: =23
+        Text: ="Feedback Response"
+        Width: =311
+        X: =190
+        Y: =7
+        ZIndex: =9
+
+    Icon20_8 As icon.ArrowLeft:
+        Color: =RGBA(255, 255, 255, 1)
+        Icon: =Icon.ArrowLeft
+        OnSelect: =Navigate('Admin Dashboard',ScreenTransition.UnCover)
+        X: =35
+        Y: =12
+        ZIndex: =10
+
+    Icon21_7 As icon.More:
+        Color: =RGBA(255, 255, 255, 1)
+        Icon: =Icon.More
+        X: =551
+        Y: =11
+        ZIndex: =11
+
+    "Gallery5 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+        DelayItemLoading: =true
+        Items: =Search( FeedBacks,TextInput2_4.Text, Department )
+        Layout: =Layout.Vertical
+        LoadingSpinner: =LoadingSpinner.Data
+        TemplatePadding: =0
+        TemplateSize: =174
+        Width: =580
+        X: =35
+        Y: =197
+        ZIndex: =12
+
+        Title5 As label:
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Semibold)
+            Height: =Self.Size * 1.8
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =23
+            Text: =ThisItem.'Issue Name'
+            VerticalAlign: =VerticalAlign.Top
+            Width: =Parent.TemplateWidth - 173
+            X: =32
+            Y: =15
+            ZIndex: =2
+
+        Subtitle4 As label:
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+            Height: =Self.Size * 1.8
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =20
+            Text: |-
+                ="Description : " & ThisItem.Description
+            VerticalAlign: =VerticalAlign.Top
+            Width: =Title5.Width
+            X: =Title5.X
+            Y: =63
+            ZIndex: =3
+
+        Separator4 As rectangle:
+            Height: =8
+            OnSelect: =Select(Parent)
+            Width: =Parent.TemplateWidth
+            Y: =Parent.TemplateHeight - Self.Height
+            ZIndex: =5
+
+        Rectangle8 As rectangle:
+            Height: =Parent.TemplateHeight - Separator4.Height
+            OnSelect: =Select(Parent)
+            Visible: =ThisItem.IsSelected
+            Width: =4
+            ZIndex: =6
+
+        Subtitle4_1 As label:
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+            Height: =36
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =20
+            Text: =ThisItem.Department
+            VerticalAlign: =VerticalAlign.Top
+            Width: =182
+            X: =103
+            Y: =119
+            ZIndex: =7
+
+        Icon34 As icon.Post:
+            Height: =54
+            Icon: =Icon.Post
+            OnSelect: =Select(Parent)
+            Width: =53
+            X: =32
+            Y: =110
+            ZIndex: =8
+
+        Icon35 As icon.Export:
+            Color: =If(Icon.Export , RGBA(178, 222, 39,1),RGBA(246, 88, 16, 1))
+            Height: =54
+            Icon: |-
+                =//Icon.Export
+                
+                If(
+                    !IsBlank(ThisItem.AssignedTo.Name),  // Check if the Name field inside the 'Assigned To' Lookup is not blank
+                Icon.CheckBadge,  // Show cancel icon if assigned
+                    Icon.Export  // Show export icon if not assigned
+                )
+            OnSelect: |-
+                =Patch(
+                    FeedBacks,
+                    LookUp(
+                        FeedBacks,
+                        'Issue Name' = Gallery5.Selected.'Issue Name'
+                    ),
+                    {
+                        AssignedTo: LookUp(
+                            TeamMembers,
+                            Department = Text(Gallery5.Selected.Dep) && Role = "Manager"
+                        )
+                    }
+                );
+                Notify(
+                    "The feedback has been successfully sent to the manager",
+                    NotificationType.Success
+                );
+                /*Patch(
+                    TeamMembers,
+                    LookUp(
+                        TeamMembers,
+                        Department = Gallery5.Selected.Department && Role="Manager"
+                    ),
+                    {
+                        'Feedback Assigned To ID': LookUp(
+                            FeedBacks,
+                            FBID = Gallery5.Selected.FBID
+                        )
+                    }
+                );*/
+            Width: =53
+            X: =511
+            Y: =61
+            ZIndex: =9
+
+    Icon19_5 As icon.Filter:
+        Icon: =Icon.Filter
+        OnSelect: |
+            =UpdateContext({ varToggle: !varToggle })
+        X: =551
+        Y: =111
+        ZIndex: =13
+

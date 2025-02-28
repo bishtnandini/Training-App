@@ -1,0 +1,170 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "cr371_tickets",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "cr371_ticket",
+    "MaxGetRowsCount": 500,
+    "Name": "Tickets",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "cr371_assignedto": "AssignedTo",
+      "cr371_AssignTo": "Assign To",
+      "cr371_CreatedBy": "Created By (cr371_CreatedBy)",
+      "cr371_department": "Department",
+      "cr371_description": "Description",
+      "cr371_priority": "Priority",
+      "cr371_status": "Status (cr371_status)",
+      "cr371_teammember_AssignedTicket_cr371_ticket": "TeamMembers (cr371_teammember_AssignedTicket_cr371_ticket)",
+      "cr371_teammember_TickId_cr371_ticket": "TeamMembers (cr371_teammember_TickId_cr371_ticket)",
+      "cr371_ticket_AsyncOperations": "System Jobs",
+      "cr371_ticket_BulkDeleteFailures": "Bulk Delete Failures",
+      "cr371_ticket_DuplicateBaseRecord": "Duplicate Records (cr371_ticket_DuplicateBaseRecord)",
+      "cr371_ticket_DuplicateMatchingRecord": "Duplicate Records (cr371_ticket_DuplicateMatchingRecord)",
+      "cr371_ticket_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "cr371_ticket_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "cr371_ticket_ProcessSession": "Process Sessions",
+      "cr371_ticket_SyncErrors": "Sync Errors",
+      "cr371_ticketid": "Ticket",
+      "cr371_tickid": "TickID",
+      "cr371_title": "Title",
+      "createdby": "Created By (createdby)",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status (statecode)",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Tickets",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Tickets (Views)",
+    "Name": "_cr371_ticket_views",
+    "RelatedEntityName": "Tickets",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "6459ff53-ed83-492b-8c7a-7488e74fe25a": "Active Tickets",
+      "71a808e0-b37d-44ec-b739-9f70a060014d": "Ticket Associated View",
+      "c38c6ae2-2f89-4ac6-b204-d94180436dfa": "Ticket Lookup View",
+      "e46c0719-9fd5-4686-b559-b90bb709918a": "Inactive Tickets",
+      "eab77cd6-8f48-4d45-81f8-dd233a9c5f8e": "Ticket Advanced Find View"
+    }
+  },
+  {
+    "DisplayName": "Department (Tickets)",
+    "Name": "cr371_ticket_cr371_department",
+    "OptionSetInfoNameMapping": {
+      "852020000": "IT",
+      "852020001": "Finance",
+      "852020002": "Sales",
+      "852020003": "Hr"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "cr371_department",
+        "OptionSetReferenceEntityName": "Tickets"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "cr371_department",
+    "RelatedEntityName": "Tickets",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Priority (Tickets)",
+    "Name": "cr371_ticket_cr371_priority",
+    "OptionSetInfoNameMapping": {
+      "852020000": "High",
+      "852020001": "Medium",
+      "852020002": "Low"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "cr371_priority",
+        "OptionSetReferenceEntityName": "Tickets"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "cr371_priority",
+    "RelatedEntityName": "Tickets",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status (Tickets)",
+    "Name": "cr371_ticket_cr371_status",
+    "OptionSetInfoNameMapping": {
+      "852020000": "Closed",
+      "852020001": "Open"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "cr371_status",
+        "OptionSetReferenceEntityName": "Tickets"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "cr371_status",
+    "RelatedEntityName": "Tickets",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status (Tickets)_1",
+    "Name": "cr371_ticket_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Tickets"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Tickets",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Tickets)",
+    "Name": "cr371_ticket_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Tickets"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Tickets",
+    "Type": "OptionSetInfo"
+  }
+]

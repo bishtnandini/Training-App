@@ -1,0 +1,83 @@
+{
+  "QualifiedValues": [
+    {
+      "Kind": "default.cds_cr371_project1_forms",
+      "Namespace": "Projects (Forms)",
+      "Values": {
+        "Information": "35652163-7a21-4cc3-98d1-b13454a8492d"
+      }
+    },
+    {
+      "Kind": "default.cds_cr371_teammember_forms",
+      "Namespace": "TeamMembers (Forms)",
+      "Values": {
+        "Information": "3e0cc85f-a834-4dbe-8fb2-d84f438e8c3b"
+      }
+    },
+    {
+      "Kind": "default.cds_cr371_task_forms",
+      "Namespace": "Tasks (Forms)",
+      "Values": {
+        "Information": "9ebea820-55f1-403d-9a25-c289c8ceec33"
+      }
+    },
+    {
+      "Kind": "default.cds_cr371_ticket_forms",
+      "Namespace": "Tickets (Forms)",
+      "Values": {
+        "Information": "0d37fdc6-69eb-40c6-99a3-b5a2f0ddeb04"
+      }
+    },
+    {
+      "Kind": "default.cds_cr371_feedback_forms",
+      "Namespace": "FeedBacks (Forms)",
+      "Values": {
+        "Information": "2de9a908-a25f-44e0-b1cd-b78fcc86ba67"
+      }
+    },
+    {
+      "Kind": "default.cds_cr371_projectassignmentss_forms",
+      "Namespace": "ProjectAssignmentsses (Forms)",
+      "Values": {
+        "Information": "ec78acad-eafe-4113-9b8c-8c1ae2bb1b6f"
+      }
+    },
+    {
+      "Kind": "default.cds_cr371_comments_forms",
+      "Namespace": "Comments (Forms)",
+      "Values": {
+        "Information": "25287397-206d-43a9-a0bf-770e9c67d690"
+      }
+    },
+    {
+      "Kind": "default.cds_bulkdeletefailure_forms",
+      "Namespace": "Bulk Delete Failures (Forms)",
+      "Values": {}
+    },
+    {
+      "Kind": "default.cds_task_forms",
+      "Namespace": "Tasks (Forms)1",
+      "Values": {
+        "Information": "b62ce022-cc0f-4c8c-bb29-21948f70dc74",
+        "Quick Form": "1fac7e2e-0b1c-4b6c-ab92-8af0f92dbdbc",
+        "Task": "16654191-19ad-48ca-9e46-c4b4fbdad76f",
+        "Task Card form": "5e9725e4-5449-4363-8c1c-5ae71767af34",
+        "Task for Interactive experience": "d5b4a1b2-de4f-4f86-8768-b0730001e7d1",
+        "Task quick create form.": "a1c8a6dc-8804-4019-9c78-7dbe86560ea1",
+        "Task Reference Panel": "81a89014-442c-44ad-9725-4077426a7fee"
+      }
+    },
+    {
+      "Kind": "default.cds_activitypointer_forms",
+      "Namespace": "Activities (Forms)",
+      "Values": {}
+    },
+    {
+      "Kind": "default.cds_cr371_task_forms",
+      "Namespace": "Tasks (Forms)11",
+      "Values": {
+        "Information": "9ebea820-55f1-403d-9a25-c289c8ceec33"
+      }
+    }
+  ]
+}

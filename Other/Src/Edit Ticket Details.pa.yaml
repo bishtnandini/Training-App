@@ -1,0 +1,414 @@
+# ************************************************************************************************
+# Warning: YAML source code for Canvas Apps is in preview. The schema is being actively developed.
+# Content may be incomplete and subject to change.
+# This file is read-only and should only be used to review changes made within Power Apps Studio.
+# This file isn't used when loading the app. External editing, merging and conflict resolution are
+# not supported.
+# 
+# For more information, visit https://go.microsoft.com/fwlink/?linkid=2292623
+# ************************************************************************************************
+Screens:
+  Edit Ticket Details:
+    Properties:
+      LoadingSpinnerColor: =RGBA(56, 96, 178, 1)
+    Children:
+      - Icon14_17:
+          Control: Classic/Icon@2.5.0
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(0, 18, 107, 1)
+            Height: =60
+            Icon: =Icon.Home
+            X: =35
+            Y: =1065
+      - Icon15_17:
+          Control: Classic/Icon@2.5.0
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(0, 18, 107, 1)
+            Height: =60
+            Icon: =Icon.Person
+            X: =551
+            Y: =1065
+      - Rectangle1_35:
+          Control: Rectangle@2.3.0
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Fill: =RGBA(219, 219, 219, 1)
+            Height: =4
+            Width: =640
+            Y: =1061
+      - Rectangle1_36:
+          Control: Rectangle@2.3.0
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Fill: =RGBA(9, 33, 98, 1)
+            Height: =88
+            Width: =640
+      - Label6_15:
+          Control: Label@2.5.1
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            Font: =Font.'Open Sans'
+            Height: =88
+            Size: =23
+            Text: ="Edit Ticket"
+            Width: =180
+            X: =235
+      - Icon20_14:
+          Control: Classic/Icon@2.5.0
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            Icon: =Icon.ArrowLeft
+            OnSelect: =Navigate('Ticket Detail Screen',ScreenTransition.Fade)
+            X: =35
+            Y: =12
+      - Icon21_13:
+          Control: Classic/Icon@2.5.0
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            Icon: =Icon.More
+            X: =551
+            Y: =12
+      - Canvas2_1:
+          Control: FluidGrid@2.3.0
+          Properties:
+            BorderThickness: =0
+            Height: =838
+            Width: =615
+            X: =20
+            Y: =120
+          Children:
+            - DataCard2_1:
+                Control: DataCard@1.0.2
+                Properties:
+                  Height: =1144
+                  Width: =615
+                Children:
+                  - DataCardKey15_32:
+                      Control: Label@2.5.1
+                      Properties:
+                        BorderColor: =RGBA(0, 0, 0, 1)
+                        Color: =RGBA(0, 18, 107, 1)
+                        Font: =Font.'Open Sans'
+                        Height: =48
+                        Text: ="Title"
+                        Width: =452
+                        Wrap: =false
+                        X: =77
+                        Y: =8
+                  - DataCardValue12_13:
+                      Control: Classic/TextInput@2.3.2
+                      Properties:
+                        BorderColor: =RGBA(9, 33, 98, 1)
+                        Default: =Gallery2.Selected.Title
+                        DelayOutput: =true
+                        DisplayMode: =
+                        Font: =Font.'Open Sans'
+                        HoverBorderColor: =RGBA(0, 18, 107, 1)
+                        HoverFill: =RGBA(186, 202, 226, 1)
+                        PaddingLeft: =5
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                        Tooltip: =
+                        Width: =519
+                        X: =44
+                        Y: =56
+                  - DataCardKey15_33:
+                      Control: Label@2.5.1
+                      Properties:
+                        BorderColor: =RGBA(0, 0, 0, 1)
+                        Color: =RGBA(0, 18, 107, 1)
+                        Font: =Font.'Open Sans'
+                        Height: =48
+                        Text: ="Description"
+                        Width: =452
+                        Wrap: =false
+                        X: =77
+                        Y: =155
+                  - DataCardValue12_14:
+                      Control: Classic/TextInput@2.3.2
+                      Properties:
+                        BorderColor: =RGBA(9, 33, 98, 1)
+                        Default: =Gallery2.Selected.Description
+                        DelayOutput: =true
+                        DisplayMode: =
+                        Font: =Font.'Open Sans'
+                        HoverBorderColor: =RGBA(0, 18, 107, 1)
+                        HoverFill: =RGBA(186, 202, 226, 1)
+                        PaddingLeft: =5
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                        Tooltip: =
+                        Width: =519
+                        X: =44
+                        Y: =203
+                  - DataCardKey15_34:
+                      Control: Label@2.5.1
+                      Properties:
+                        BorderColor: =RGBA(0, 0, 0, 1)
+                        Color: =RGBA(0, 18, 107, 1)
+                        Font: =Font.'Open Sans'
+                        Height: =48
+                        Text: ="Priority"
+                        Width: =452
+                        Wrap: =false
+                        X: =77
+                        Y: =300
+                  - Dropdown1_4:
+                      Control: Classic/DropDown@2.3.1
+                      Properties:
+                        BorderColor: =RGBA(9, 33, 98, 1)
+                        ChevronBackground: =RGBA(9, 33, 98, 1)
+                        ChevronFill: =RGBA(255, 255, 255, 1)
+                        ChevronHoverBackground: =ColorFade(RGBA(56, 96, 178, 1), -20%)
+                        ChevronHoverFill: =RGBA(255, 255, 255, 1)
+                        Default: |+
+                          =LookUp(Choices('Priority (Tickets)'), Value = Gallery2.Selected.Priority).Value
+                        Font: =Font.'Open Sans'
+                        HoverFill: =RGBA(186, 202, 226, 1)
+                        Items: |+
+                          =Choices('Priority (Tickets)')
+                        PressedColor: =RGBA(255, 255, 255, 1)
+                        PressedFill: =RGBA(0, 18, 107, 1)
+                        SelectionColor: =RGBA(255, 255, 255, 1)
+                        SelectionFill: =RGBA(56, 96, 178, 1)
+                        Width: =519
+                        X: =44
+                        Y: =348
+                  - DataCardKey15_36:
+                      Control: Label@2.5.1
+                      Properties:
+                        BorderColor: =RGBA(0, 0, 0, 1)
+                        Color: =RGBA(0, 18, 107, 1)
+                        Font: =Font.'Open Sans'
+                        Height: =48
+                        Text: ="Assigned To"
+                        Width: =452
+                        Wrap: =false
+                        X: =77
+                        Y: =623
+                  - Dropdown1_6:
+                      Control: Classic/DropDown@2.3.1
+                      Properties:
+                        BorderColor: =RGBA(0, 18, 107, 1)
+                        ChevronBackground: =RGBA(9, 33, 98, 1)
+                        ChevronFill: =RGBA(255, 255, 255, 1)
+                        ChevronHoverBackground: =ColorFade(RGBA(56, 96, 178, 1), -20%)
+                        ChevronHoverFill: =RGBA(255, 255, 255, 1)
+                        Default: |+
+                          =LookUp(Tickets, 'Assign To'.Name = Gallery2.Selected.'Assign To'.Name, 'Assign To'.Name)
+                        Font: =Font.'Open Sans'
+                        HoverFill: =RGBA(186, 202, 226, 1)
+                        Items: |+
+                          =
+                          //Choices(Tickets.'Assign To')
+                          Filter(TeamMembers, Department = Text(Dropdown1_5.Selected.Value)).Name
+
+
+
+
+                        Items.Value: =cr371_empid
+                        PressedColor: =RGBA(255, 255, 255, 1)
+                        PressedFill: =RGBA(0, 18, 107, 1)
+                        SelectionColor: =RGBA(255, 255, 255, 1)
+                        SelectionFill: =RGBA(56, 96, 178, 1)
+                        Width: =519
+                        X: =44
+                        Y: =671
+                  - Label4_21:
+                      Control: Label@2.5.1
+                      Properties:
+                        BorderColor: =RGBA(0, 18, 107, 1)
+                        Color: =RGBA(255, 0, 0, 1)
+                        Font: =Font.'Open Sans'
+                        Height: =43
+                        Text: ="*"
+                        Width: =45
+                        X: =44
+                        Y: =13
+                  - Label4_22:
+                      Control: Label@2.5.1
+                      Properties:
+                        BorderColor: =RGBA(0, 18, 107, 1)
+                        Color: =RGBA(255, 0, 0, 1)
+                        Font: =Font.'Open Sans'
+                        Height: =43
+                        Text: ="*"
+                        Width: =45
+                        X: =44
+                        Y: =157
+                  - Label4_23:
+                      Control: Label@2.5.1
+                      Properties:
+                        BorderColor: =RGBA(0, 18, 107, 1)
+                        Color: =RGBA(255, 0, 0, 1)
+                        Font: =Font.'Open Sans'
+                        Height: =43
+                        Text: ="*"
+                        Width: =45
+                        X: =44
+                        Y: =305
+                  - Label4_25:
+                      Control: Label@2.5.1
+                      Properties:
+                        BorderColor: =RGBA(0, 18, 107, 1)
+                        Color: =RGBA(255, 0, 0, 1)
+                        Font: =Font.'Open Sans'
+                        Height: =43
+                        Text: ="*"
+                        Width: =45
+                        X: =44
+                        Y: =628
+                  - DataCardKey15_37:
+                      Control: Label@2.5.1
+                      Properties:
+                        BorderColor: =RGBA(0, 0, 0, 1)
+                        Color: =RGBA(0, 18, 107, 1)
+                        Font: =Font.'Open Sans'
+                        Height: =51
+                        Text: ="Status"
+                        Width: =452
+                        Wrap: =false
+                        X: =44
+                        Y: =777
+                  - Dropdown1_7:
+                      Control: Classic/DropDown@2.3.1
+                      Properties:
+                        BorderColor: =RGBA(0, 18, 107, 1)
+                        ChevronBackground: =RGBA(9, 33, 98, 1)
+                        ChevronFill: =RGBA(255, 255, 255, 1)
+                        ChevronHoverBackground: =ColorFade(RGBA(56, 96, 178, 1), -20%)
+                        ChevronHoverFill: =RGBA(255, 255, 255, 1)
+                        Default: ="Open"
+                        DisplayMode: =DisplayMode.View
+                        Font: =Font.'Open Sans'
+                        Height: =74
+                        HoverFill: =RGBA(186, 202, 226, 1)
+                        Items: =Choices('Status (Tickets)')
+                        PressedColor: =RGBA(255, 255, 255, 1)
+                        PressedFill: =RGBA(0, 18, 107, 1)
+                        SelectionColor: =RGBA(255, 255, 255, 1)
+                        SelectionFill: =RGBA(56, 96, 178, 1)
+                        Width: =519
+                        X: =44
+                        Y: =828
+                  - DataCardKey15_38:
+                      Control: Label@2.5.1
+                      Properties:
+                        BorderColor: =RGBA(0, 0, 0, 1)
+                        Color: =RGBA(0, 18, 107, 1)
+                        Font: =Font.'Open Sans'
+                        Height: =48
+                        Text: ="Created By"
+                        Width: =485
+                        Wrap: =false
+                        X: =44
+                        Y: =949
+                  - DataCardValue12_15:
+                      Control: Classic/TextInput@2.3.2
+                      Properties:
+                        BorderColor: =RGBA(9, 33, 98, 1)
+                        Default: =varLoggedInUser.Name
+                        DelayOutput: =true
+                        DisplayMode: =DisplayMode.View
+                        Font: =Font.'Open Sans'
+                        HoverBorderColor: =RGBA(0, 18, 107, 1)
+                        HoverFill: =RGBA(186, 202, 226, 1)
+                        PaddingLeft: =5
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                        Tooltip: =
+                        Width: =519
+                        X: =44
+                        Y: =997
+                  - DataCardKey15_35:
+                      Control: Label@2.5.1
+                      Properties:
+                        BorderColor: =RGBA(0, 0, 0, 1)
+                        Color: =RGBA(0, 18, 107, 1)
+                        Font: =Font.'Open Sans'
+                        Height: =48
+                        Text: ="Department"
+                        Width: =452
+                        Wrap: =false
+                        X: =77
+                        Y: =461
+                  - Dropdown1_5:
+                      Control: Classic/DropDown@2.3.1
+                      Properties:
+                        BorderColor: =RGBA(0, 18, 107, 1)
+                        ChevronBackground: =RGBA(9, 33, 98, 1)
+                        ChevronFill: =RGBA(255, 255, 255, 1)
+                        ChevronHoverBackground: =ColorFade(RGBA(56, 96, 178, 1), -20%)
+                        ChevronHoverFill: =RGBA(255, 255, 255, 1)
+                        Default: =Gallery2.Selected.Department
+                        Font: =Font.'Open Sans'
+                        HoverFill: =RGBA(186, 202, 226, 1)
+                        Items: |+
+                          =Choices('Department (Tickets)')
+                        PressedColor: =RGBA(255, 255, 255, 1)
+                        PressedFill: =RGBA(0, 18, 107, 1)
+                        SelectionColor: =RGBA(255, 255, 255, 1)
+                        SelectionFill: =RGBA(56, 96, 178, 1)
+                        Width: =519
+                        X: =44
+                        Y: =509
+                  - Label4_24:
+                      Control: Label@2.5.1
+                      Properties:
+                        BorderColor: =RGBA(0, 18, 107, 1)
+                        Color: =RGBA(255, 0, 0, 1)
+                        Font: =Font.'Open Sans'
+                        Height: =43
+                        Text: ="*"
+                        Width: =45
+                        X: =44
+                        Y: =466
+      - Button5_1:
+          Control: Classic/Button@2.2.0
+          Properties:
+            BorderColor: =ColorFade(Self.Fill, -15%)
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            Fill: =RGBA(9, 33, 98, 1)
+            Font: =Font.'Open Sans'
+            HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =ColorFade(RGBA(56, 96, 178, 1), -20%)
+            OnSelect: |+
+              =Set(
+                  VarTicket,
+                  Patch(
+                      Tickets,
+                      LookUp(Tickets ,TickID=Gallery2.Selected.TickID),
+                      {
+                          Title: DataCardValue12_13.Text,
+                          Description: DataCardValue12_14.Text,
+                          Priority: Dropdown1_4.Selected.Value,
+                          'Status (cr371_status)': Dropdown1_7.Selected.Value,
+                          'Assign To':LookUp(TeamMembers,Name=Dropdown1_6.Selected.Name),
+                          'Created By (cr371_CreatedBy)': LookUp(TeamMembers,Name=varLoggedInUser.Name)
+                      }
+                  )
+              );
+              Navigate(
+                  'Ticket details are displayed to the employee',
+                  ScreenTransition.Cover
+              );
+
+            PressedBorderColor: =Self.Fill
+            PressedColor: =Self.Fill
+            PressedFill: =Self.Color
+            Text: ="Edit Ticket"
+            X: =180
+            Y: =958
